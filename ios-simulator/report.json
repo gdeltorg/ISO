@@ -1,18 +1,310 @@
 {
-  "generated_at": "2026-09-23T03:51:04.651880+00:00",
+  "generated_at": "2026-09-23T04:31:11.205880+00:00",
   "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
   "device": "iPhone 17 Pro",
+  "runtime_catalog": [
+    {
+      "version": "iOS 18.5",
+      "build": "18.5 - 22F77",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-18-5",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-05-12"
+    },
+    {
+      "version": "iOS 18.6",
+      "build": "18.6 - 22G86",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-18-6",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-07-29"
+    },
+    {
+      "version": "iOS 26.0",
+      "build": "26.0.1 - 23A8464",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-0",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-09-15"
+    },
+    {
+      "version": "iOS 26.1",
+      "build": "26.1 - 23B86",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-1",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-11-03"
+    },
+    {
+      "version": "iOS 26.2",
+      "build": "26.2 - 23C54",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-12-12"
+    }
+  ],
+  "iphone_simulator_catalog": [
+    {
+      "name": "iPhone 17 Pro",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
+      "official_release_date": "2025-09-19",
+      "family": "iPhone 17"
+    },
+    {
+      "name": "iPhone 17 Pro Max",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max",
+      "official_release_date": "2025-09-19",
+      "family": "iPhone 17"
+    },
+    {
+      "name": "iPhone Air",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Air",
+      "official_release_date": "2025-09-19",
+      "family": "iPhone"
+    },
+    {
+      "name": "iPhone 17",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+      "official_release_date": "2025-09-19",
+      "family": "iPhone 17"
+    },
+    {
+      "name": "iPhone 16 Pro",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 16"
+    },
+    {
+      "name": "iPhone 16 Pro Max",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro-Max",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 16"
+    },
+    {
+      "name": "iPhone 16e",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16e",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 16"
+    },
+    {
+      "name": "iPhone 16",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 16"
+    },
+    {
+      "name": "iPhone 16 Plus",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Plus",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 16"
+    },
+    {
+      "name": "iPhone 15 Pro",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 15"
+    },
+    {
+      "name": "iPhone 15 Pro Max",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro-Max",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 15"
+    },
+    {
+      "name": "iPhone 15",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 15"
+    },
+    {
+      "name": "iPhone 15 Plus",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Plus",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 15"
+    },
+    {
+      "name": "iPhone 14 Pro",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 14"
+    },
+    {
+      "name": "iPhone 14 Pro Max",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro-Max",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 14"
+    },
+    {
+      "name": "iPhone 14",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 14"
+    },
+    {
+      "name": "iPhone 14 Plus",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Plus",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 14"
+    },
+    {
+      "name": "iPhone SE (3rd generation)",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone"
+    },
+    {
+      "name": "iPhone 13 Pro",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 13"
+    },
+    {
+      "name": "iPhone 13 Pro Max",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro-Max",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 13"
+    },
+    {
+      "name": "iPhone 13",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 13"
+    },
+    {
+      "name": "iPhone 13 mini",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13-mini",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 13"
+    },
+    {
+      "name": "iPhone 12 Pro",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 12"
+    },
+    {
+      "name": "iPhone 12 Pro Max",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro-Max",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 12"
+    },
+    {
+      "name": "iPhone 12",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 12"
+    },
+    {
+      "name": "iPhone 12 mini",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12-mini",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 12"
+    },
+    {
+      "name": "iPhone SE (2nd generation)",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE--2nd-generation-",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone"
+    },
+    {
+      "name": "iPhone 11 Pro",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 11"
+    },
+    {
+      "name": "iPhone 11 Pro Max",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro-Max",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 11"
+    },
+    {
+      "name": "iPhone 11",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-11",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 11"
+    },
+    {
+      "name": "iPhone Xʀ",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-XR",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone X"
+    },
+    {
+      "name": "iPhone Xs",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-XS",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone X"
+    },
+    {
+      "name": "iPhone Xs Max",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-XS-Max",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone X"
+    },
+    {
+      "name": "iPhone X",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-X",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone X"
+    },
+    {
+      "name": "iPhone 8",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-8",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 8"
+    },
+    {
+      "name": "iPhone 8 Plus",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-8-Plus",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 8"
+    },
+    {
+      "name": "iPhone 7",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-7",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 7"
+    },
+    {
+      "name": "iPhone 7 Plus",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-7-Plus",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 7"
+    },
+    {
+      "name": "iPhone SE (1st generation)",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone"
+    },
+    {
+      "name": "iPhone 6s",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-6s",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 6s"
+    },
+    {
+      "name": "iPhone 6s Plus",
+      "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus",
+      "official_release_date": "see Apple technical specifications; not inferred from Simulator",
+      "family": "iPhone 6s"
+    }
+  ],
+  "requested_but_not_installed": [
+    {
+      "version": "iOS 27",
+      "official_release_date": "2026-09-14",
+      "reason": "Not present in the selected GitHub Actions macOS-15 image; this is not evidence that Apple has not released it."
+    }
+  ],
   "scope": "Apple Simulator and simctl system capabilities; no app-specific or account flows",
   "tests": [
     {
       "name": "Boot and bootstatus",
       "status": "passed",
-      "details": "BDE47C62-2810-4A2B-803B-E6B794057CB0"
+      "details": "7C7E6F2A-788F-41F5-A8F8-044F0919CB79"
     },
     {
       "name": "System environment",
       "status": "failed",
-      "details": "/Users/runner/Library/Developer/CoreSimulator/Devices/BDE47C62-2810-4A2B-803B-E6B794057CB0/data"
+      "details": "/Users/runner/Library/Developer/CoreSimulator/Devices/7C7E6F2A-788F-41F5-A8F8-044F0919CB79/data"
     },
     {
       "name": "Screenshot capture",
