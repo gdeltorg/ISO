@@ -18,6 +18,7 @@
   <h1>iOS Simulator Test Report</h1>
   <p class="meta">Apple official Simulator tooling, executed on GitHub Actions with an iPhone 17 Pro device profile.</p>
   <p id="summary">Loading latest report…</p>
+  <p id="uninstalled" class="meta"></p>
   <h2>Installed iOS Runtimes</h2>
   <table><thead><tr><th>Version</th><th>Build</th><th>Identifier</th><th>Apple release date</th><th>Status</th></tr></thead><tbody id="runtimes"></tbody></table>
   <h2>iPhone Simulator hardware</h2>
@@ -39,6 +40,9 @@
       document.getElementById("devices").innerHTML = (report.iphone_simulator_catalog || []).map(d =>
         `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td>${escapeHtml(d.official_release_date)}</td><td>Installed device type</td></tr>`
       ).join("");
+      document.getElementById("uninstalled").textContent = (report.requested_but_not_installed || []).map(r =>
+        `${r.version} released ${r.official_release_date}, but is not installed in this runner image: ${r.reason}`
+      ).join(" ");
       document.getElementById("tests").innerHTML = tests.map(t =>
         `<tr><td>${escapeHtml(t.name)}</td><td class="${escapeHtml(t.status)}">${escapeHtml(t.status)}</td><td><code>${escapeHtml(t.details || "")}</code></td></tr>`
       ).join("");
