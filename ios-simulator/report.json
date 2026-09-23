@@ -1,7 +1,186 @@
 {
-  "generated_at": "2026-09-23T04:36:42.986106+00:00",
+  "generated_at": "2026-09-23T06:51:35.821989+00:00",
   "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
   "device": "iPhone 17 Pro",
+  "runner_catalog": [
+    {
+      "label": "macos-15",
+      "os": "macOS 15",
+      "architecture": "arm64 (M1)",
+      "cpu": 3,
+      "ram_gb": 7,
+      "storage_gb": 14,
+      "status": "public standard"
+    },
+    {
+      "label": "macos-15-intel",
+      "os": "macOS 15",
+      "architecture": "x86_64 Intel",
+      "cpu": 4,
+      "ram_gb": 14,
+      "storage_gb": 14,
+      "status": "public standard"
+    },
+    {
+      "label": "macos-14",
+      "os": "macOS 14",
+      "architecture": "arm64 (M1)",
+      "cpu": 3,
+      "ram_gb": 7,
+      "storage_gb": 14,
+      "status": "public standard"
+    },
+    {
+      "label": "macos-26",
+      "os": "macOS 26",
+      "architecture": "arm64",
+      "cpu": 3,
+      "ram_gb": 7,
+      "storage_gb": 14,
+      "status": "public standard"
+    },
+    {
+      "label": "macos-26-intel",
+      "os": "macOS 26",
+      "architecture": "x86_64 Intel",
+      "cpu": 4,
+      "ram_gb": 14,
+      "storage_gb": 14,
+      "status": "public standard"
+    },
+    {
+      "label": "macos-latest",
+      "os": "macOS latest",
+      "architecture": "arm64",
+      "cpu": 3,
+      "ram_gb": 7,
+      "storage_gb": 14,
+      "status": "moving label"
+    },
+    {
+      "label": "xcode-27",
+      "os": "macOS 26",
+      "architecture": "arm64",
+      "cpu": 3,
+      "ram_gb": 7,
+      "storage_gb": 14,
+      "status": "public preview"
+    }
+  ],
+  "apple_os_catalog": [
+    {
+      "version": "iOS 18.5",
+      "build": "18.5 - 22F77",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-18-5",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-05-12"
+    },
+    {
+      "version": "iOS 18.6",
+      "build": "18.6 - 22G86",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-18-6",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-07-29"
+    },
+    {
+      "version": "iOS 26.0",
+      "build": "26.0.1 - 23A8464",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-0",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-09-15"
+    },
+    {
+      "version": "iOS 26.1",
+      "build": "26.1 - 23B86",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-1",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-11-03"
+    },
+    {
+      "version": "iOS 26.2",
+      "build": "26.2 - 23C54",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-12-12"
+    },
+    {
+      "version": "tvOS 18.5",
+      "build": "18.5 - 22L572",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.tvOS-18-5",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-05-12"
+    },
+    {
+      "version": "tvOS 26.1",
+      "build": "26.1 - 23J579",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.tvOS-26-1",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-11-03"
+    },
+    {
+      "version": "tvOS 26.2",
+      "build": "26.2 - 23K51",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.tvOS-26-2",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-12-12"
+    },
+    {
+      "version": "watchOS 11.5",
+      "build": "11.5 - 22T572",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-11-5",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-05-12"
+    },
+    {
+      "version": "watchOS 26.1",
+      "build": "26.1 - 23S36",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-26-1",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-11-03"
+    },
+    {
+      "version": "watchOS 26.2",
+      "build": "26.2 - 23S303",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-26-2",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-12-12"
+    },
+    {
+      "version": "visionOS 2.3",
+      "build": "2.3 - 22N895",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-2-3",
+      "availability": "installed on this runner",
+      "official_release_date": "2024-12-11"
+    },
+    {
+      "version": "visionOS 2.4",
+      "build": "2.4 - 22O237",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-2-4",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-01-31"
+    },
+    {
+      "version": "visionOS 2.5",
+      "build": "2.5 - 22O473",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-2-5",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-05-12"
+    },
+    {
+      "version": "visionOS 26.1",
+      "build": "26.1 - 23N47",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-26-1",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-11-03"
+    },
+    {
+      "version": "visionOS 26.2",
+      "build": "26.2 - 23N301",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-26-2",
+      "availability": "installed on this runner",
+      "official_release_date": "2025-12-12"
+    }
+  ],
   "runtime_catalog": [
     {
       "version": "iOS 18.5",
@@ -299,12 +478,12 @@
     {
       "name": "Boot and bootstatus",
       "status": "passed",
-      "details": "879F34D7-BCB4-4F3B-A15B-3AFC86B69C25"
+      "details": "E522B5C1-32B4-4B42-9AEF-3D7038E49B2A"
     },
     {
       "name": "System environment",
       "status": "failed",
-      "details": "/Users/runner/Library/Developer/CoreSimulator/Devices/879F34D7-BCB4-4F3B-A15B-3AFC86B69C25/data"
+      "details": "/Users/runner/Library/Developer/CoreSimulator/Devices/E522B5C1-32B4-4B42-9AEF-3D7038E49B2A/data"
     },
     {
       "name": "Screenshot capture",
