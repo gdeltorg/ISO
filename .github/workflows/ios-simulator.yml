@@ -67,24 +67,32 @@ jobs:
           tests = [json.loads(line) for line in pathlib.Path(sys.argv[1]).read_text().splitlines()]
           runtime_lines = pathlib.Path(sys.argv[4]).read_text().splitlines()
           runtimes = []
+          apple_os = []
+          release_dates = {
+              "iOS 18.5": "2025-05-12", "iOS 18.6": "2025-07-29",
+              "iOS 26.0": "2025-09-15", "iOS 26.1": "2025-11-03",
+              "iOS 26.2": "2025-12-12", "iOS 27.0": "2026-09-14",
+              "tvOS 18.5": "2025-05-12", "tvOS 26.1": "2025-11-03",
+              "tvOS 26.2": "2025-12-12", "watchOS 11.5": "2025-05-12",
+              "watchOS 26.1": "2025-11-03", "watchOS 26.2": "2025-12-12",
+              "visionOS 2.3": "2024-12-11", "visionOS 2.4": "2025-01-31",
+              "visionOS 2.5": "2025-05-12", "visionOS 26.1": "2025-11-03",
+              "visionOS 26.2": "2025-12-12"
+          }
           for line in runtime_lines:
-              match = re.search(r'^(iOS [0-9.]+).*?\(([^)]+)\).*-\s+(com\.apple\.CoreSimulator\.SimRuntime\.[^\s]+)', line)
+              match = re.search(r'^((?:iOS|tvOS|watchOS|visionOS) [0-9.]+).*?\(([^)]+)\).*-\s+(com\.apple\.CoreSimulator\.SimRuntime\.[^\s]+)', line)
               if match:
                   version, build, identifier = match.groups()
-                  runtimes.append({
+                  item = {
                       "version": version,
                       "build": build,
                       "identifier": identifier,
                       "availability": "installed on this runner",
-                      "official_release_date": {
-                          "iOS 18.5": "2025-05-12",
-                          "iOS 18.6": "2025-07-29",
-                          "iOS 26.0": "2025-09-15",
-                          "iOS 26.1": "2025-11-03",
-                          "iOS 26.2": "2025-12-12",
-                          "iOS 27.0": "2026-09-14"
-                      }.get(version, "not verified in this run")
-                  })
+                      "official_release_date": release_dates.get(version, "not verified in this run")
+                  }
+                  apple_os.append(item)
+                  if version.startswith("iOS "):
+                      runtimes.append(item)
           device_lines = pathlib.Path(sys.argv[5]).read_text().splitlines()
           devices = []
           for line in device_lines:
@@ -144,6 +152,16 @@ jobs:
               "generated_at": datetime.now(timezone.utc).isoformat(),
               "runtime": sys.argv[3],
               "device": "iPhone 17 Pro",
+              "runner_catalog": [
+                  {"label": "macos-15", "os": "macOS 15", "architecture": "arm64 (M1)", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-15-intel", "os": "macOS 15", "architecture": "x86_64 Intel", "cpu": 4, "ram_gb": 14, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-14", "os": "macOS 14", "architecture": "arm64 (M1)", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-26", "os": "macOS 26", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-26-intel", "os": "macOS 26", "architecture": "x86_64 Intel", "cpu": 4, "ram_gb": 14, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-latest", "os": "macOS latest", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "moving label"},
+                  {"label": "xcode-27", "os": "macOS 26", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public preview"}
+              ],
+              "apple_os_catalog": apple_os,
               "runtime_catalog": runtimes,
               "iphone_simulator_catalog": devices,
               "requested_but_not_installed": [{

@@ -19,6 +19,10 @@
   <p class="meta">Apple official Simulator tooling, executed on GitHub Actions with an iPhone 17 Pro device profile.</p>
   <p id="summary">Loading latest report…</p>
   <p id="uninstalled" class="meta"></p>
+  <h2>GitHub-hosted macOS runners</h2>
+  <table><thead><tr><th>Workflow label</th><th>Runner OS</th><th>Architecture</th><th>CPU</th><th>RAM</th><th>SSD</th><th>Status</th></tr></thead><tbody id="runners"></tbody></table>
+  <h2>Apple operating-system Runtimes installed on this runner</h2>
+  <table><thead><tr><th>OS / version</th><th>Build</th><th>Runtime identifier</th><th>Apple release date</th><th>Status</th></tr></thead><tbody id="apple-os"></tbody></table>
   <h2>Installed iOS Runtimes</h2>
   <table><thead><tr><th>Version</th><th>Build</th><th>Identifier</th><th>Apple release date</th><th>Status</th></tr></thead><tbody id="runtimes"></tbody></table>
   <h2>iPhone Simulator hardware</h2>
@@ -43,6 +47,12 @@
       document.getElementById("uninstalled").textContent = (report.requested_but_not_installed || []).map(r =>
         `${r.version} released ${r.official_release_date}, but is not installed in this runner image: ${r.reason}`
       ).join(" ");
+      document.getElementById("runners").innerHTML = (report.runner_catalog || []).map(r =>
+        `<tr><td><code>${escapeHtml(r.label)}</code></td><td>${escapeHtml(r.os)}</td><td>${escapeHtml(r.architecture)}</td><td>${escapeHtml(r.cpu)}</td><td>${escapeHtml(r.ram_gb)} GB</td><td>${escapeHtml(r.storage_gb)} GB</td><td>${escapeHtml(r.status)}</td></tr>`
+      ).join("");
+      document.getElementById("apple-os").innerHTML = (report.apple_os_catalog || []).map(r =>
+        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td>${escapeHtml(r.official_release_date)}</td><td>${escapeHtml(r.availability)}</td></tr>`
+      ).join("");
       document.getElementById("tests").innerHTML = tests.map(t =>
         `<tr><td>${escapeHtml(t.name)}</td><td class="${escapeHtml(t.status)}">${escapeHtml(t.status)}</td><td><code>${escapeHtml(t.details || "")}</code></td></tr>`
       ).join("");
