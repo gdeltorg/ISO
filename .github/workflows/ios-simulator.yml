@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '.github/workflows/ios-simulator-check.yml'
+      - '.github/workflows/ios-simulator.yml'
 
 permissions:
   contents: write
