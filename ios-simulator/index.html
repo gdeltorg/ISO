@@ -12,6 +12,11 @@
     .passed { color: #087f46; font-weight: 700; }
     .failed { color: #b42318; font-weight: 700; }
     code { word-break: break-word; }
+    .controls { background: #f5f7fb; border: 1px solid #dfe3ea; border-radius: 8px; display: flex; flex-wrap: wrap; gap: .7rem; margin: 1rem 0; padding: 1rem; }
+    input, select { border: 1px solid #b9c2d0; border-radius: 5px; font: inherit; padding: .45rem .6rem; }
+    .stats { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1rem 0; }
+    .stat { background: #eef2f8; border-radius: 6px; padding: .6rem .8rem; }
+    .date { white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -19,6 +24,25 @@
   <p class="meta">Apple official Simulator tooling, executed on GitHub Actions with an iPhone 17 Pro device profile.</p>
   <p id="summary">Loading latest report…</p>
   <p id="uninstalled" class="meta"></p>
+  <div class="controls" aria-label="Report filters">
+    <label>筛选类型
+      <select id="type-filter">
+        <option value="all">全部</option>
+        <option value="runner">Runner</option>
+        <option value="apple-os">Apple Runtime</option>
+        <option value="iphone">iPhone 硬件</option>
+      </select>
+    </label>
+    <label>关键词 <input id="search-filter" type="search" placeholder="版本、机型、架构…"></label>
+    <label>发布日期
+      <select id="date-filter">
+        <option value="all">全部日期</option>
+        <option value="dated">仅有发布日期</option>
+        <option value="unknown">仅待核实</option>
+      </select>
+    </label>
+  </div>
+  <div id="stats" class="stats" aria-live="polite"></div>
   <h2>GitHub-hosted macOS runners</h2>
   <table><thead><tr><th>Workflow label</th><th>Runner OS</th><th>Architecture</th><th>CPU</th><th>RAM</th><th>SSD</th><th>Status</th></tr></thead><tbody id="runners"></tbody></table>
   <h2>Apple operating-system Runtimes installed on this runner</h2>
@@ -33,35 +57,65 @@
   </table>
   <p class="meta">Scope: automated Simulator and <code>xcrun simctl</code> system capabilities. App-specific UI, Apple account, SMS, CAPTCHA, and production service flows are not tested by this report.</p>
   <script>
+    let reportData;
     fetch("report.json").then(r => r.json()).then(report => {
+      reportData = report;
       const tests = report.tests || [];
       const passed = tests.filter(t => t.status === "passed").length;
       document.getElementById("summary").textContent =
         `${passed}/${tests.length} checks passed · ${report.device} · ${report.generated_at || "not generated"}`;
-      document.getElementById("runtimes").innerHTML = (report.runtime_catalog || []).map(r =>
-        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td>${escapeHtml(r.official_release_date)}</td><td>${escapeHtml(r.availability)}</td></tr>`
-      ).join("");
-      document.getElementById("devices").innerHTML = (report.iphone_simulator_catalog || []).map(d =>
-        `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td>${escapeHtml(d.official_release_date)}</td><td>Installed device type</td></tr>`
-      ).join("");
       document.getElementById("uninstalled").textContent = (report.requested_but_not_installed || []).map(r =>
         `${r.version} released ${r.official_release_date}, but is not installed in this runner image: ${r.reason}`
       ).join(" ");
-      document.getElementById("runners").innerHTML = (report.runner_catalog || []).map(r =>
-        `<tr><td><code>${escapeHtml(r.label)}</code></td><td>${escapeHtml(r.os)}</td><td>${escapeHtml(r.architecture)}</td><td>${escapeHtml(r.cpu)}</td><td>${escapeHtml(r.ram_gb)} GB</td><td>${escapeHtml(r.storage_gb)} GB</td><td>${escapeHtml(r.status)}</td></tr>`
-      ).join("");
-      document.getElementById("apple-os").innerHTML = (report.apple_os_catalog || []).map(r =>
-        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td>${escapeHtml(r.official_release_date)}</td><td>${escapeHtml(r.availability)}</td></tr>`
-      ).join("");
       document.getElementById("tests").innerHTML = tests.map(t =>
         `<tr><td>${escapeHtml(t.name)}</td><td class="${escapeHtml(t.status)}">${escapeHtml(t.status)}</td><td><code>${escapeHtml(t.details || "")}</code></td></tr>`
       ).join("");
+      renderCatalog();
     }).catch(error => {
       document.getElementById("summary").textContent = `Report unavailable: ${error}`;
     });
     function escapeHtml(value) {
       return String(value).replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
     }
+    function dateValue(value) {
+      return /^\d{4}-\d{2}-\d{2}$/.test(value || "") ? value : "";
+    }
+    function sortNewest(a, b) {
+      return (dateValue(b.official_release_date) || "0000-00-00").localeCompare(dateValue(a.official_release_date) || "0000-00-00");
+    }
+    function matches(item, kind, query, dateMode) {
+      const text = JSON.stringify(item).toLowerCase();
+      const hasDate = Boolean(dateValue(item.official_release_date));
+      return (typeFilter.value === "all" || typeFilter.value === kind) &&
+        (!query || text.includes(query)) &&
+        (dateMode === "all" || (dateMode === "dated" && hasDate) || (dateMode === "unknown" && !hasDate));
+    }
+    function renderCatalog() {
+      const query = searchFilter.value.trim().toLowerCase();
+      const dateMode = dateFilter.value;
+      const runners = (reportData.runner_catalog || []).filter(r => matches(r, "runner", query, dateMode));
+      const appleOs = (reportData.apple_os_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
+      const runtimes = (reportData.runtime_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
+      const devices = (reportData.iphone_simulator_catalog || []).filter(r => matches(r, "iphone", query, dateMode)).sort(sortNewest);
+      document.getElementById("runners").innerHTML = runners.map(r =>
+        `<tr><td><code>${escapeHtml(r.label)}</code></td><td>${escapeHtml(r.os)}</td><td>${escapeHtml(r.architecture)}</td><td>${escapeHtml(r.cpu)}</td><td>${escapeHtml(r.ram_gb)} GB</td><td>${escapeHtml(r.storage_gb)} GB</td><td>${escapeHtml(r.status)}</td></tr>`
+      ).join("");
+      document.getElementById("apple-os").innerHTML = appleOs.map(r =>
+        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td class="date">${escapeHtml(r.official_release_date)}</td><td>${escapeHtml(r.availability)}</td></tr>`
+      ).join("");
+      document.getElementById("runtimes").innerHTML = runtimes.map(r =>
+        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td class="date">${escapeHtml(r.official_release_date)}</td><td>${escapeHtml(r.availability)}</td></tr>`
+      ).join("");
+      document.getElementById("devices").innerHTML = devices.map(d =>
+        `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td class="date">${escapeHtml(d.official_release_date)}</td><td>Installed device type</td></tr>`
+      ).join("");
+      document.getElementById("stats").innerHTML =
+        `<span class="stat">Runner: ${runners.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span>`;
+    }
+    const typeFilter = document.getElementById("type-filter");
+    const searchFilter = document.getElementById("search-filter");
+    const dateFilter = document.getElementById("date-filter");
+    [typeFilter, searchFilter, dateFilter].forEach(control => control.addEventListener("input", renderCatalog));
   </script>
 </body>
 </html>
