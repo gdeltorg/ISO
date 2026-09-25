@@ -181,6 +181,14 @@ jobs:
                   {"vendor": "Canonical", "family": "Ubuntu", "version": "24.04 LTS", "official_release_date": "2024-04-25", "runner_labels": "ubuntu-24.04", "status": "GitHub label"},
                   {"vendor": "Canonical", "family": "Ubuntu", "version": "22.04 LTS", "official_release_date": "2022-04-21", "runner_labels": "ubuntu-22.04, ubuntu-latest", "status": "GitHub label"}
               ],
+              "cloud_instance_catalog": [
+                  {"provider": "Microsoft Azure", "instance_type": "Standard_DS2_v2", "vcpus": 2, "ram_gib": 7, "disk": "14 GB runner workspace (cloud VM disk is provider-managed)", "runner_labels": "ubuntu-slim / 2-vCPU class", "basis": "closest published CPU/RAM profile", "status": "reference equivalent, not confirmed GitHub backing instance"},
+                  {"provider": "Microsoft Azure", "instance_type": "Standard_D4s_v5", "vcpus": 4, "ram_gib": 16, "disk": "14 GB runner workspace (cloud VM disk is provider-managed)", "runner_labels": "ubuntu-24.04, ubuntu-22.04, windows-2025, windows-2022", "basis": "closest published CPU/RAM profile", "status": "reference equivalent, not confirmed GitHub backing instance"},
+                  {"provider": "Amazon Web Services", "instance_type": "m5.large", "vcpus": 2, "ram_gib": 8, "disk": "14 GB runner workspace (EBS backing not specified)", "runner_labels": "ubuntu-slim / 2-vCPU class", "basis": "closest published CPU/RAM profile", "status": "reference equivalent, not confirmed GitHub backing instance"},
+                  {"provider": "Amazon Web Services", "instance_type": "m5.xlarge", "vcpus": 4, "ram_gib": 16, "disk": "14 GB runner workspace (EBS backing not specified)", "runner_labels": "ubuntu-24.04, ubuntu-22.04, windows-2025, windows-2022", "basis": "closest published CPU/RAM profile", "status": "reference equivalent, not confirmed GitHub backing instance"},
+                  {"provider": "Google Cloud", "instance_type": "e2-standard-2", "vcpus": 2, "ram_gib": 8, "disk": "14 GB runner workspace (persistent disk not specified)", "runner_labels": "ubuntu-slim / 2-vCPU class", "basis": "closest published CPU/RAM profile", "status": "reference equivalent, not confirmed GitHub backing instance"},
+                  {"provider": "Google Cloud", "instance_type": "e2-standard-4", "vcpus": 4, "ram_gib": 16, "disk": "14 GB runner workspace (persistent disk not specified)", "runner_labels": "ubuntu-24.04, ubuntu-22.04, windows-2025, windows-2022", "basis": "closest published CPU/RAM profile", "status": "reference equivalent, not confirmed GitHub backing instance"}
+              ],
               "apple_os_catalog": apple_os,
               "runtime_catalog": runtimes,
               "iphone_simulator_catalog": devices,

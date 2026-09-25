@@ -30,6 +30,7 @@
         <option value="all">全部</option>
         <option value="runner">Runner</option>
         <option value="operating-system">操作系统</option>
+        <option value="cloud-instance">云实例参考</option>
         <option value="apple-os">Apple Runtime</option>
         <option value="iphone">iPhone 硬件</option>
       </select>
@@ -49,6 +50,10 @@
   <h2>Operating-system release catalog</h2>
   <p class="meta">This catalog separates vendor release dates from GitHub workflow labels. A runner label is not itself an operating-system product name.</p>
   <table><thead><tr><th>Vendor</th><th>Operating system</th><th>Version</th><th>Official release date</th><th>Corresponding GitHub runner labels</th><th>Status</th></tr></thead><tbody id="operating-systems"></tbody></table>
+  <h2>Cloud instance specification equivalents</h2>
+  <p class="meta">GitHub does not generally disclose the exact Azure/AWS/GCP VM behind each hosted runner. The entries below are provider-specific reference equivalents matched by vCPU/RAM; they are not claims about GitHub's actual underlying VM.</p>
+  <p class="meta">官方规格：<a href="https://learn.microsoft.com/azure/virtual-machines/sizes/general-purpose/dsv2-series" target="_blank" rel="noreferrer">Azure DSv2</a> · <a href="https://aws.amazon.com/ec2/instance-types/m5/" target="_blank" rel="noreferrer">AWS M5</a> · <a href="https://cloud.google.com/compute/vm-instance-pricing" target="_blank" rel="noreferrer">Google Cloud E2</a></p>
+  <table><thead><tr><th>Cloud provider</th><th>Instance type</th><th>vCPU</th><th>RAM</th><th>Runner workspace / disk</th><th>Matching GitHub runner labels</th><th>Mapping basis</th><th>Status</th></tr></thead><tbody id="cloud-instances"></tbody></table>
   <h2>Apple operating-system Runtimes installed on this runner</h2>
   <p class="meta">“Runner install date” is shown only when GitHub publishes an exact image-install date. “Runner observed date” is when this workflow detected the Runtime; it is not the Apple release date.</p>
   <table><thead><tr><th>OS / version</th><th>Build</th><th>Runtime identifier</th><th>Apple official release date</th><th>Runner install date</th><th>Runner observed date</th><th>Official source</th><th>Runner status</th></tr></thead><tbody id="apple-os"></tbody></table>
@@ -114,6 +119,7 @@
       const dateMode = dateFilter.value;
       const runners = (reportData.runner_catalog || []).filter(r => matches(r, "runner", query, dateMode));
       const operatingSystems = (reportData.operating_system_catalog || []).filter(r => matches(r, "operating-system", query, dateMode)).sort(sortNewest);
+      const cloudInstances = (reportData.cloud_instance_catalog || []).filter(r => matches(r, "cloud-instance", query, dateMode));
       const appleOs = (reportData.apple_os_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const runtimes = (reportData.runtime_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const devices = (reportData.iphone_simulator_catalog || []).filter(r => matches(r, "iphone", query, dateMode)).sort(sortNewest);
@@ -122,6 +128,9 @@
       ).join("");
       document.getElementById("operating-systems").innerHTML = operatingSystems.map(r =>
         `<tr><td>${escapeHtml(r.vendor)}</td><td>${escapeHtml(r.family)}</td><td>${escapeHtml(r.version)}</td><td class="date">${formatDate(r.official_release_date)}</td><td><code>${escapeHtml(r.runner_labels)}</code></td><td>${escapeHtml(r.status)}</td></tr>`
+      ).join("");
+      document.getElementById("cloud-instances").innerHTML = cloudInstances.map(r =>
+        `<tr><td>${escapeHtml(r.provider)}</td><td><code>${escapeHtml(r.instance_type)}</code></td><td>${escapeHtml(r.vcpus)}</td><td>${escapeHtml(r.ram_gib)} GiB</td><td>${escapeHtml(r.disk)}</td><td><code>${escapeHtml(r.runner_labels)}</code></td><td>${escapeHtml(r.basis)}</td><td>${escapeHtml(r.status)}</td></tr>`
       ).join("");
       document.getElementById("apple-os").innerHTML = appleOs.map(r =>
         `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td class="date">${formatDate(r.official_release_date)}</td><td>${escapeHtml(runnerInstallDate(r))}</td><td class="date">${formatObservedDate(r.runner_observed_at)}</td><td><a href="https://support.apple.com/en-us/100100" target="_blank" rel="noreferrer">Apple release notes</a></td><td>${escapeHtml(r.availability)}</td></tr>`
@@ -133,7 +142,7 @@
         `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td class="date">${formatDate(d.official_release_date)}</td><td>${escapeHtml(runnerInstallDate(d))}</td><td class="date">${formatObservedDate(d.runner_observed_at)}</td><td><a href="https://www.apple.com/iphone/" target="_blank" rel="noreferrer">Apple iPhone</a></td><td>Installed device type</td></tr>`
       ).join("");
       document.getElementById("stats").innerHTML =
-        `<span class="stat">Runner: ${runners.length}</span><span class="stat">操作系统: ${operatingSystems.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span>`;
+        `<span class="stat">Runner: ${runners.length}</span><span class="stat">操作系统: ${operatingSystems.length}</span><span class="stat">云实例参考: ${cloudInstances.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span>`;
     }
     const typeFilter = document.getElementById("type-filter");
     const searchFilter = document.getElementById("search-filter");
