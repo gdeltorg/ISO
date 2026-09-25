@@ -88,7 +88,9 @@ jobs:
                       "build": build,
                       "identifier": identifier,
                       "availability": "installed on this runner",
-                      "official_release_date": release_dates.get(version, "not verified in this run")
+                      "official_release_date": release_dates.get(version, "not verified in this run"),
+                      "runner_install_date": "not publicly recorded",
+                      "runner_observed_at": datetime.now(timezone.utc).isoformat()
                   }
                   apple_os.append(item)
                   if version.startswith("iOS "):
@@ -146,6 +148,8 @@ jobs:
                           "iPhone 17": "2025-09-19",
                           "iPhone Air": "2025-09-19"
                       }.get(name, "see Apple technical specifications; not inferred from Simulator"),
+                      "runner_install_date": "not publicly recorded",
+                      "runner_observed_at": datetime.now(timezone.utc).isoformat(),
                       "family": generation.group(0) if generation else "iPhone"
                   })
           report = {
@@ -167,6 +171,7 @@ jobs:
               "requested_but_not_installed": [{
                   "version": "iOS 27",
                   "official_release_date": "2026-09-14",
+                  "runner_install_date": "not publicly recorded",
                   "reason": "Not present in the selected GitHub Actions macOS-15 image; this is not evidence that Apple has not released it."
               }] if not any(r["version"].startswith("iOS 27") for r in runtimes) else [],
               "scope": "Apple Simulator and simctl system capabilities; no app-specific or account flows",
