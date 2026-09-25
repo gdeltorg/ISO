@@ -101,12 +101,13 @@ jobs:
                       runtimes.append(item)
           device_lines = pathlib.Path(sys.argv[5]).read_text().splitlines()
           devices = []
+          ipads = []
           for line in device_lines:
-              match = re.search(r'^\s*(iPhone.*?)\s+\((com\.apple\.CoreSimulator\.SimDeviceType\.[^)]+)\)', line)
+              match = re.search(r'^\s*((?:iPhone|iPad).*?)\s+\((com\.apple\.CoreSimulator\.SimDeviceType\.[^)]+)\)', line)
               if match:
                   name, identifier = match.groups()
                   generation = re.search(r'iPhone (6s|7|8|X|11|12|13|14|15|16|17)', name)
-                  devices.append({
+                  item = {
                       "name": name,
                       "identifier": identifier,
                       "official_release_date": {
@@ -155,7 +156,12 @@ jobs:
                       "runner_install_date": "not publicly recorded",
                       "runner_observed_at": datetime.now(timezone.utc).isoformat(),
                       "family": generation.group(0) if generation else "iPhone"
-                  })
+                  }
+                  if name.startswith("iPad"):
+                      item["family"] = "iPad"
+                      ipads.append(item)
+                  else:
+                      devices.append(item)
           watch_devices = []
           for line in watch_device_lines:
               match = re.search(r'^\s*(Apple Watch.*?)\s+\((com\.apple\.CoreSimulator\.SimDeviceType\.[^)]+)\)', line)
@@ -204,6 +210,7 @@ jobs:
               "apple_os_catalog": apple_os,
               "runtime_catalog": runtimes,
               "iphone_simulator_catalog": devices,
+              "ipad_simulator_catalog": ipads,
               "requested_but_not_installed": [{
                   "version": "iOS 27",
                   "official_release_date": "2026-09-14",

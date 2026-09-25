@@ -61,6 +61,10 @@
   <table><thead><tr><th>Version</th><th>Build</th><th>Identifier</th><th>Apple official release date</th><th>Runner install date</th><th>Runner observed date</th><th>Official source</th><th>Runner status</th></tr></thead><tbody id="runtimes"></tbody></table>
   <h2>iPhone Simulator hardware</h2>
   <table><thead><tr><th>Model</th><th>Identifier</th><th>Hardware official release date</th><th>Runner install date</th><th>Runner observed date</th><th>Official source</th><th>Runner status</th></tr></thead><tbody id="devices"></tbody></table>
+  <h2>iPad Simulator hardware</h2>
+  <table><thead><tr><th>Model</th><th>Identifier</th><th>Runner status</th></tr></thead><tbody id="ipads"></tbody></table>
+  <h2>Apple platform simulation matrix</h2>
+  <table><thead><tr><th>Platform</th><th>Simulator program</th><th>Runtime required</th><th>Device profile</th><th>Current report</th></tr></thead><tbody id="platform-matrix"></tbody></table>
   <h2>watchOS Simulator availability</h2>
   <p id="watchos-summary" class="meta"></p>
   <table><thead><tr><th>watchOS Runtime</th><th>Build</th><th>Runtime identifier</th><th>Runner status</th></tr></thead><tbody id="watchos-runtimes"></tbody></table>
@@ -131,6 +135,7 @@
       const appleOs = (reportData.apple_os_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const runtimes = (reportData.runtime_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const devices = (reportData.iphone_simulator_catalog || []).filter(r => matches(r, "iphone", query, dateMode)).sort(sortNewest);
+      const ipads = (reportData.ipad_simulator_catalog || []).filter(r => matches(r, "ipad", query, dateMode));
       const watchos = reportData.watchos_simulator || { runtime_versions: [], device_types: [], status: "未检测" };
       document.getElementById("runners").innerHTML = runners.map(r =>
         `<tr><td><code>${escapeHtml(r.label)}</code></td><td>${escapeHtml(r.os)}</td><td><code>${escapeHtml(r.observed_os_version || "not observed in this run")}</code></td><td class="date">${formatDate(r.os_release_date)}</td><td>${escapeHtml(r.architecture)}</td><td>${escapeHtml(r.cpu)}</td><td>${escapeHtml(r.ram_gb)} GB</td><td>${escapeHtml(r.storage_gb)} GB</td><td>${escapeHtml(r.status)}</td></tr>`
@@ -150,6 +155,14 @@
       document.getElementById("devices").innerHTML = devices.map(d =>
         `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td class="date">${formatDate(d.official_release_date)}</td><td>${escapeHtml(runnerInstallDate(d))}</td><td class="date">${formatObservedDate(d.runner_observed_at)}</td><td><a href="https://www.apple.com/iphone/" target="_blank" rel="noreferrer">Apple iPhone</a></td><td>Installed device type</td></tr>`
       ).join("");
+      document.getElementById("ipads").innerHTML = ipads.map(d =>
+        `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td>iOS Runtime + iPad profile</td></tr>`
+      ).join("");
+      document.getElementById("platform-matrix").innerHTML = [
+        ["iOS / iPhone", "Apple Simulator + simctl", "iOS Runtime", `${devices.length} iPhone profiles`, reportData.runtime_catalog?.length ? "可检测；当前 workflow 已启动 iPhone 17 Pro" : "未检测到 iOS Runtime"],
+        ["iOS / iPad", "Apple Simulator + simctl", "iOS Runtime", `${ipads.length} iPad profiles`, ipads.length ? "可创建/启动（需匹配 iOS Runtime）" : "当前 runner 未提供 iPad profile"],
+        ["watchOS / Apple Watch", "Apple Simulator + simctl", "watchOS Runtime", `${watchos.device_types?.length || 0} Watch profiles`, watchos.status]
+      ].map(row => `<tr>${row.map(cell => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`).join("");
       document.getElementById("watchos-summary").textContent =
         `状态：${watchos.status}。Apple Watch Series 12 / Ultra 4 只有在 runner 同时提供对应 Runtime 与 device profile 时才能创建并启动；Apple 安全更新发布日期不代表 runner 已安装。`;
       document.getElementById("watchos-runtimes").innerHTML = (watchos.runtime_versions || []).map(r =>
@@ -159,7 +172,7 @@
         `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td></tr>`
       ).join("");
       document.getElementById("stats").innerHTML =
-        `<span class="stat">Runner: ${runners.length}</span><span class="stat">操作系统: ${operatingSystems.length}</span><span class="stat">云实例参考: ${cloudInstances.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span>`;
+        `<span class="stat">Runner: ${runners.length}</span><span class="stat">操作系统: ${operatingSystems.length}</span><span class="stat">云实例参考: ${cloudInstances.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span><span class="stat">iPad: ${ipads.length}</span>`;
     }
     const typeFilter = document.getElementById("type-filter");
     const searchFilter = document.getElementById("search-filter");
