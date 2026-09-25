@@ -84,7 +84,11 @@
   <p class="meta">Scope: automated Simulator and <code>xcrun simctl</code> system capabilities. App-specific UI, Apple account, SMS, CAPTCHA, and production service flows are not tested by this report.</p>
   <script>
     let reportData;
-    fetch("report.json").then(r => r.json()).then(report => {
+    const reportUrl = `report.json?published=${Date.now()}`;
+    fetch(reportUrl, { cache: "no-store" }).then(r => {
+      if (!r.ok) throw new Error(`report.json returned HTTP ${r.status}`);
+      return r.json();
+    }).then(report => {
       reportData = report;
       const tests = report.tests || [];
       const passed = tests.filter(t => t.status === "passed").length;
