@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T07:31:55.984527+00:00",
+  "generated_at": "2026-09-25T07:38:14.675067+00:00",
   "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
   "device": "iPhone 17 Pro",
   "runner_catalog": [
@@ -436,7 +436,7 @@
         "availability": "installed on this runner",
         "official_release_date": "2025-05-12",
         "runner_install_date": "not publicly recorded",
-        "runner_observed_at": "2026-09-25T07:31:55.982994+00:00"
+        "runner_observed_at": "2026-09-25T07:38:14.673932+00:00"
       },
       {
         "version": "watchOS 26.1",
@@ -445,7 +445,7 @@
         "availability": "installed on this runner",
         "official_release_date": "2025-11-03",
         "runner_install_date": "not publicly recorded",
-        "runner_observed_at": "2026-09-25T07:31:55.982997+00:00"
+        "runner_observed_at": "2026-09-25T07:38:14.673961+00:00"
       },
       {
         "version": "watchOS 26.2",
@@ -454,7 +454,7 @@
         "availability": "installed on this runner",
         "official_release_date": "2025-12-12",
         "runner_install_date": "not publicly recorded",
-        "runner_observed_at": "2026-09-25T07:31:55.982999+00:00"
+        "runner_observed_at": "2026-09-25T07:38:14.673975+00:00"
       }
     ],
     "device_types": [
@@ -585,7 +585,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-05-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982787+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673589+00:00"
     },
     {
       "version": "iOS 18.6",
@@ -594,7 +594,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-07-29",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982974+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673907+00:00"
     },
     {
       "version": "iOS 26.0",
@@ -603,7 +603,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-09-15",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982979+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673913+00:00"
     },
     {
       "version": "iOS 26.1",
@@ -612,7 +612,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-11-03",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982982+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673916+00:00"
     },
     {
       "version": "iOS 26.2",
@@ -621,7 +621,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-12-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982984+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673919+00:00"
     },
     {
       "version": "tvOS 18.5",
@@ -630,7 +630,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-05-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982987+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673923+00:00"
     },
     {
       "version": "tvOS 26.1",
@@ -639,7 +639,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-11-03",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982990+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673926+00:00"
     },
     {
       "version": "tvOS 26.2",
@@ -648,7 +648,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-12-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982992+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673929+00:00"
     },
     {
       "version": "watchOS 11.5",
@@ -657,7 +657,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-05-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982994+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673932+00:00"
     },
     {
       "version": "watchOS 26.1",
@@ -666,7 +666,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-11-03",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982997+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673961+00:00"
     },
     {
       "version": "watchOS 26.2",
@@ -675,7 +675,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-12-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982999+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673975+00:00"
     },
     {
       "version": "visionOS 2.3",
@@ -684,7 +684,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2024-12-11",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.983002+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673980+00:00"
     },
     {
       "version": "visionOS 2.4",
@@ -693,7 +693,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-01-31",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.983005+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673982+00:00"
     },
     {
       "version": "visionOS 2.5",
@@ -702,7 +702,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-05-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.983007+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673985+00:00"
     },
     {
       "version": "visionOS 26.1",
@@ -711,7 +711,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-11-03",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.983010+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673988+00:00"
     },
     {
       "version": "visionOS 26.2",
@@ -720,7 +720,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-12-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.983012+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673990+00:00"
     }
   ],
   "runtime_catalog": [
@@ -731,7 +731,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-05-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982787+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673589+00:00"
     },
     {
       "version": "iOS 18.6",
@@ -740,7 +740,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-07-29",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982974+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673907+00:00"
     },
     {
       "version": "iOS 26.0",
@@ -749,7 +749,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-09-15",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982979+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673913+00:00"
     },
     {
       "version": "iOS 26.1",
@@ -758,7 +758,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-11-03",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982982+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673916+00:00"
     },
     {
       "version": "iOS 26.2",
@@ -767,7 +767,7 @@
       "availability": "installed on this runner",
       "official_release_date": "2025-12-12",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.982984+00:00"
+      "runner_observed_at": "2026-09-25T07:38:14.673919+00:00"
     }
   ],
   "iphone_simulator_catalog": [
@@ -776,7 +776,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
       "official_release_date": "2025-09-19",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984001+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674563+00:00",
       "family": "iPhone 17"
     },
     {
@@ -784,7 +784,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max",
       "official_release_date": "2025-09-19",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984018+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674577+00:00",
       "family": "iPhone 17"
     },
     {
@@ -792,7 +792,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Air",
       "official_release_date": "2025-09-19",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984025+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674583+00:00",
       "family": "iPhone"
     },
     {
@@ -800,7 +800,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
       "official_release_date": "2025-09-19",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984030+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674588+00:00",
       "family": "iPhone 17"
     },
     {
@@ -808,7 +808,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro",
       "official_release_date": "2024-09-20",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984034+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674593+00:00",
       "family": "iPhone 16"
     },
     {
@@ -816,7 +816,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro-Max",
       "official_release_date": "2024-09-20",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984039+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674597+00:00",
       "family": "iPhone 16"
     },
     {
@@ -824,7 +824,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16e",
       "official_release_date": "2025-02-28",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984043+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674602+00:00",
       "family": "iPhone 16"
     },
     {
@@ -832,7 +832,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16",
       "official_release_date": "2024-09-20",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984050+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674606+00:00",
       "family": "iPhone 16"
     },
     {
@@ -840,7 +840,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Plus",
       "official_release_date": "2024-09-20",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984055+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674610+00:00",
       "family": "iPhone 16"
     },
     {
@@ -848,7 +848,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro",
       "official_release_date": "2023-09-22",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984059+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674615+00:00",
       "family": "iPhone 15"
     },
     {
@@ -856,7 +856,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro-Max",
       "official_release_date": "2023-09-22",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984063+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674619+00:00",
       "family": "iPhone 15"
     },
     {
@@ -864,7 +864,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15",
       "official_release_date": "2023-09-22",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984067+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674624+00:00",
       "family": "iPhone 15"
     },
     {
@@ -872,7 +872,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Plus",
       "official_release_date": "2023-09-22",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984072+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674628+00:00",
       "family": "iPhone 15"
     },
     {
@@ -880,7 +880,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro",
       "official_release_date": "2022-09-16",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984076+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674632+00:00",
       "family": "iPhone 14"
     },
     {
@@ -888,7 +888,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro-Max",
       "official_release_date": "2022-09-16",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984080+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674636+00:00",
       "family": "iPhone 14"
     },
     {
@@ -896,7 +896,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14",
       "official_release_date": "2022-09-16",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984084+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674641+00:00",
       "family": "iPhone 14"
     },
     {
@@ -904,7 +904,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Plus",
       "official_release_date": "2022-10-07",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984088+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674645+00:00",
       "family": "iPhone 14"
     },
     {
@@ -912,7 +912,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
       "official_release_date": "2022-03-18",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984093+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674649+00:00",
       "family": "iPhone"
     },
     {
@@ -920,7 +920,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro",
       "official_release_date": "2021-09-24",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984097+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674653+00:00",
       "family": "iPhone 13"
     },
     {
@@ -928,7 +928,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro-Max",
       "official_release_date": "2021-09-24",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984101+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674658+00:00",
       "family": "iPhone 13"
     },
     {
@@ -936,7 +936,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13",
       "official_release_date": "2021-09-24",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984105+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674662+00:00",
       "family": "iPhone 13"
     },
     {
@@ -944,7 +944,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13-mini",
       "official_release_date": "2021-09-24",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984109+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674666+00:00",
       "family": "iPhone 13"
     },
     {
@@ -952,7 +952,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro",
       "official_release_date": "2020-10-23",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984113+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674670+00:00",
       "family": "iPhone 12"
     },
     {
@@ -960,7 +960,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro-Max",
       "official_release_date": "2020-11-13",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984118+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674674+00:00",
       "family": "iPhone 12"
     },
     {
@@ -968,7 +968,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12",
       "official_release_date": "2020-10-23",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984122+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674679+00:00",
       "family": "iPhone 12"
     },
     {
@@ -976,7 +976,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12-mini",
       "official_release_date": "2020-11-13",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984126+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674683+00:00",
       "family": "iPhone 12"
     },
     {
@@ -984,7 +984,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE--2nd-generation-",
       "official_release_date": "2020-04-24",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984130+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674687+00:00",
       "family": "iPhone"
     },
     {
@@ -992,7 +992,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro",
       "official_release_date": "2019-09-20",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984134+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674692+00:00",
       "family": "iPhone 11"
     },
     {
@@ -1000,7 +1000,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro-Max",
       "official_release_date": "2019-09-20",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984138+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674696+00:00",
       "family": "iPhone 11"
     },
     {
@@ -1008,7 +1008,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-11",
       "official_release_date": "2019-09-20",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984142+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674700+00:00",
       "family": "iPhone 11"
     },
     {
@@ -1016,7 +1016,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-XR",
       "official_release_date": "2018-10-26",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984155+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674713+00:00",
       "family": "iPhone X"
     },
     {
@@ -1024,7 +1024,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-XS",
       "official_release_date": "2018-09-21",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984179+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674717+00:00",
       "family": "iPhone X"
     },
     {
@@ -1032,7 +1032,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-XS-Max",
       "official_release_date": "2018-09-21",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984184+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674721+00:00",
       "family": "iPhone X"
     },
     {
@@ -1040,7 +1040,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-X",
       "official_release_date": "2017-11-03",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984188+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674725+00:00",
       "family": "iPhone X"
     },
     {
@@ -1048,7 +1048,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-8",
       "official_release_date": "2017-09-22",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984192+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674729+00:00",
       "family": "iPhone 8"
     },
     {
@@ -1056,7 +1056,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-8-Plus",
       "official_release_date": "2017-09-22",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984196+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674733+00:00",
       "family": "iPhone 8"
     },
     {
@@ -1064,7 +1064,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-7",
       "official_release_date": "2016-09-16",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984200+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674737+00:00",
       "family": "iPhone 7"
     },
     {
@@ -1072,7 +1072,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-7-Plus",
       "official_release_date": "2016-09-16",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984204+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674741+00:00",
       "family": "iPhone 7"
     },
     {
@@ -1080,7 +1080,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE",
       "official_release_date": "2016-03-31",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984208+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674746+00:00",
       "family": "iPhone"
     },
     {
@@ -1088,7 +1088,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-6s",
       "official_release_date": "2015-09-25",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984212+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674749+00:00",
       "family": "iPhone 6s"
     },
     {
@@ -1096,7 +1096,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus",
       "official_release_date": "2015-09-25",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984217+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674753+00:00",
       "family": "iPhone 6s"
     }
   ],
@@ -1106,7 +1106,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M5-16GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984221+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674758+00:00",
       "family": "iPad"
     },
     {
@@ -1114,7 +1114,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M5-12GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984226+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674765+00:00",
       "family": "iPad"
     },
     {
@@ -1122,7 +1122,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-16GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984231+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674771+00:00",
       "family": "iPad"
     },
     {
@@ -1130,7 +1130,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984235+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674775+00:00",
       "family": "iPad"
     },
     {
@@ -1138,7 +1138,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M4-16GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984239+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674779+00:00",
       "family": "iPad"
     },
     {
@@ -1146,7 +1146,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M4-8GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984243+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674783+00:00",
       "family": "iPad"
     },
     {
@@ -1154,7 +1154,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M4-16GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984248+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674788+00:00",
       "family": "iPad"
     },
     {
@@ -1162,7 +1162,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M4-8GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984252+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674792+00:00",
       "family": "iPad"
     },
     {
@@ -1170,7 +1170,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-A16",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984256+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674796+00:00",
       "family": "iPad"
     },
     {
@@ -1178,7 +1178,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M3",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984260+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674800+00:00",
       "family": "iPad"
     },
     {
@@ -1186,7 +1186,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M3",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984264+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674804+00:00",
       "family": "iPad"
     },
     {
@@ -1194,7 +1194,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M2",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984269+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674808+00:00",
       "family": "iPad"
     },
     {
@@ -1202,7 +1202,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M2",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984273+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674812+00:00",
       "family": "iPad"
     },
     {
@@ -1210,7 +1210,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984277+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674816+00:00",
       "family": "iPad"
     },
     {
@@ -1218,7 +1218,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-4th-generation-16GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984284+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674823+00:00",
       "family": "iPad"
     },
     {
@@ -1226,7 +1226,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-4th-generation-8GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984288+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674828+00:00",
       "family": "iPad"
     },
     {
@@ -1234,7 +1234,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-12-9-inch-6th-generation-16GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984293+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674833+00:00",
       "family": "iPad"
     },
     {
@@ -1242,7 +1242,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-12-9-inch-6th-generation-8GB",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984298+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674838+00:00",
       "family": "iPad"
     },
     {
@@ -1250,7 +1250,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-10th-generation",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984302+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674842+00:00",
       "family": "iPad"
     },
     {
@@ -1258,7 +1258,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Air-5th-generation",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984306+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674846+00:00",
       "family": "iPad"
     },
     {
@@ -1266,7 +1266,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-mini-6th-generation",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984311+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674851+00:00",
       "family": "iPad"
     },
     {
@@ -1274,7 +1274,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-3rd-generation",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984315+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674855+00:00",
       "family": "iPad"
     },
     {
@@ -1282,7 +1282,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-12-9-inch-5th-generation",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984320+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674859+00:00",
       "family": "iPad"
     },
     {
@@ -1290,7 +1290,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-9th-generation",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984324+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674864+00:00",
       "family": "iPad"
     },
     {
@@ -1298,7 +1298,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Air--4th-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984328+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674868+00:00",
       "family": "iPad"
     },
     {
@@ -1306,7 +1306,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad--8th-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984332+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674872+00:00",
       "family": "iPad"
     },
     {
@@ -1314,7 +1314,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Air--3rd-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984336+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674876+00:00",
       "family": "iPad"
     },
     {
@@ -1322,7 +1322,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-mini--5th-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984341+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674881+00:00",
       "family": "iPad"
     },
     {
@@ -1330,7 +1330,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--11-inch---2nd-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984345+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674885+00:00",
       "family": "iPad"
     },
     {
@@ -1338,7 +1338,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---4th-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984350+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674889+00:00",
       "family": "iPad"
     },
     {
@@ -1346,7 +1346,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--11-inch-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984354+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674894+00:00",
       "family": "iPad"
     },
     {
@@ -1354,7 +1354,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---3rd-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984358+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674898+00:00",
       "family": "iPad"
     },
     {
@@ -1362,7 +1362,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad--7th-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984363+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674902+00:00",
       "family": "iPad"
     },
     {
@@ -1370,7 +1370,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--10-5-inch-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984367+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674906+00:00",
       "family": "iPad"
     },
     {
@@ -1378,7 +1378,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---2nd-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984371+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674911+00:00",
       "family": "iPad"
     },
     {
@@ -1386,7 +1386,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad--6th-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984375+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674915+00:00",
       "family": "iPad"
     },
     {
@@ -1394,7 +1394,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--9-7-inch-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984379+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674919+00:00",
       "family": "iPad"
     },
     {
@@ -1402,7 +1402,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984384+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674923+00:00",
       "family": "iPad"
     },
     {
@@ -1410,7 +1410,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad--5th-generation-",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984388+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674927+00:00",
       "family": "iPad"
     },
     {
@@ -1418,7 +1418,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Air-2",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984392+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674931+00:00",
       "family": "iPad"
     },
     {
@@ -1426,7 +1426,7 @@
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPad-mini-4",
       "official_release_date": "see Apple technical specifications; not inferred from Simulator",
       "runner_install_date": "not publicly recorded",
-      "runner_observed_at": "2026-09-25T07:31:55.984396+00:00",
+      "runner_observed_at": "2026-09-25T07:38:14.674935+00:00",
       "family": "iPad"
     }
   ],
@@ -1443,12 +1443,12 @@
     {
       "name": "Boot and bootstatus",
       "status": "passed",
-      "details": "CD1C8F73-D8AF-4D68-8927-A472F1896231"
+      "details": "E23E17C8-AD7A-4CE5-B2A6-839ECE5CAEB6"
     },
     {
       "name": "System environment",
-      "status": "failed",
-      "details": "HOME=/Users/runner/Library/Developer/CoreSimulator/Devices/CD1C8F73-D8AF-4D68-8927-A472F1896231/data; booted data directory readable"
+      "status": "passed",
+      "details": "HOME=/Users/runner/Library/Developer/CoreSimulator/Devices/E23E17C8-AD7A-4CE5-B2A6-839ECE5CAEB6/data; booted data directory readable"
     },
     {
       "name": "Screenshot capture",
