@@ -1,5 +1,16 @@
 <!doctype html>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=ios-simulator/">
-<title>iOS Simulator Tests</title>
-<a href="ios-simulator/">Open iOS Simulator test report</a>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GDELT ISO | Apple Simulator 与厂商发布总览</title>
+<style>body{font:16px system-ui,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#172033}.hero{background:#f1f6ff;border:1px solid #cbdcf7;border-radius:12px;padding:1.4rem}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0}.card{border:1px solid #dfe3ea;border-radius:10px;padding:1rem;background:#fff}.card h2{margin-top:0}a{color:#0759a5}.meta{color:#5d687d}.stat{font-size:1.2rem;font-weight:700}</style>
+<div class="hero"><h1>GDELT ISO</h1><p>Apple Simulator、GitHub Runner、操作系统、硬件 profile、云实例和各厂商发布状态的分级目录。</p><p class="meta">首页只做提纲挈领；进入二级页面查看完整表格、官方发布时间、Runner 标签、检测证据和安装方式。</p></div>
+<div class="cards">
+  <div class="card"><h2><a href="ios-simulator/">Simulator 运行报告</a></h2><p>Boot、环境、截图、外观、定位、权限、诊断、Runtime 和设备 profile。</p></div>
+  <div class="card"><h2><a href="vendors/">厂商发布目录</a></h2><p>Apple、Microsoft、Canonical 硬件与软件发布时间及 Runner 对照。</p></div>
+  <div class="card"><h2><a href="vendors/apple/">Apple</a></h2><p>iPhone、iOS、Xcode、Simulator；包括 iPhone 18 的核实状态。</p></div>
+  <div class="card"><h2><a href="vendors/microsoft/">Microsoft</a></h2><p>Windows Server、Surface、Azure 参考实例。</p></div>
+  <div class="card"><h2><a href="vendors/canonical/">Canonical</a></h2><p>Ubuntu LTS 与云实例参考。</p></div>
+</div>
+<h2>目录原则</h2>
+<p class="meta">“官方发布时间”“Runner 是否有标签”“当前 workflow 是否检测到 profile/runtime”“是否可以手动安装”是四个独立字段。未正式发布或未在 Runner 检测到的产品会明确写成未核实/无证据，不用推测日期替代事实。</p>
+<p><a href="https://github.com/gdeltorg/ISO" target="_blank">GitHub 仓库</a> · <a href="ios-simulator/report.json">最新 report.json</a></p>
