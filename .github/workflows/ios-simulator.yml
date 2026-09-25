@@ -47,21 +47,31 @@ jobs:
           trap 'xcrun simctl shutdown "$device_id" >/dev/null 2>&1 || true; xcrun simctl delete "$device_id" >/dev/null 2>&1 || true' EXIT
           xcrun simctl boot "$device_id"
           xcrun simctl bootstatus "$device_id" -b
+          simulator_home="$(xcrun simctl getenv "$device_id" HOME)"
+          system_environment_status="failed"
+          if [[ -n "$simulator_home" ]] &&
+             xcrun simctl spawn "$device_id" sh -c 'test -d "$HOME" && test -r "$HOME"' >/dev/null 2>&1; then
+            system_environment_status="passed"
+          fi
+          privacy_help="$(xcrun simctl privacy help 2>&1 || true)"
+          privacy_status="failed"
+          if grep -Eq 'grant|revoke' <<<"$privacy_help"; then
+            privacy_status="passed"
+          fi
           xcrun simctl list devices | tee "$RUNNER_TEMP/simulator-devices.txt"
           xcrun simctl diagnose --no-archive --output="$RUNNER_TEMP/simulator-diagnose"
           {
             printf '{"name":"Boot and bootstatus","status":"passed","details":"%s"}\n' "$device_id"
-            printf '{"name":"System environment","status":"%s","details":"%s"}\n' \
-              "$([ "$(xcrun simctl spawn "$device_id" sw_vers >/dev/null 2>&1; echo $?)" -eq 0 ] && echo passed || echo failed)" \
-              "$(xcrun simctl getenv "$device_id" HOME)"
+            printf '{"name":"System environment","status":"%s","details":"HOME=%s; booted data directory readable"}\n' \
+              "$system_environment_status" "$simulator_home"
             printf '{"name":"Screenshot capture","status":"%s","details":"simctl io screenshot"}\n' \
               "$([ "$(xcrun simctl io "$device_id" screenshot "$RUNNER_TEMP/simulator-screen.png" >/dev/null 2>&1; echo $?)" -eq 0 ] && echo passed || echo failed)"
             printf '{"name":"Appearance control","status":"%s","details":"dark then light"}\n' \
               "$([ "$(xcrun simctl ui "$device_id" appearance dark >/dev/null 2>&1; xcrun simctl ui "$device_id" appearance light >/dev/null 2>&1; echo $?)" -eq 0 ] && echo passed || echo failed)"
             printf '{"name":"Location control","status":"%s","details":"set then clear"}\n' \
               "$([ "$(xcrun simctl location "$device_id" 37.3317,-122.0307 >/dev/null 2>&1; xcrun simctl location "$device_id" clear >/dev/null 2>&1; echo $?)" -eq 0 ] && echo passed || echo failed)"
-            printf '{"name":"Privacy and permissions API","status":"%s","details":"simctl privacy help available"}\n' \
-              "$([ "$(xcrun simctl privacy help >/dev/null 2>&1; echo $?)" -eq 0 ] && echo passed || echo failed)"
+            printf '{"name":"Privacy and permissions API","status":"%s","details":"simctl privacy supports grant/revoke; app-specific check requires an installed bundle"}\n' \
+              "$privacy_status"
             printf '{"name":"Diagnostics","status":"passed","details":"simctl diagnose"}\n'
           } > "$RUNNER_TEMP/simulator-tests.ndjson"
           python3 - "$RUNNER_TEMP/simulator-tests.ndjson" "$GITHUB_WORKSPACE/ios-simulator/report.json" "$runtime" "$RUNNER_TEMP/simulator-runtimes.txt" "$RUNNER_TEMP/simulator-devicetypes.txt" "$RUNNER_TEMP/host-os-version.txt" "$RUNNER_TEMP/watch-devicetypes.txt" <<'PY'
