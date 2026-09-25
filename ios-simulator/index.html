@@ -46,11 +46,11 @@
   <h2>GitHub-hosted macOS runners</h2>
   <table><thead><tr><th>Workflow label</th><th>Runner OS</th><th>Architecture</th><th>CPU</th><th>RAM</th><th>SSD</th><th>Status</th></tr></thead><tbody id="runners"></tbody></table>
   <h2>Apple operating-system Runtimes installed on this runner</h2>
-  <table><thead><tr><th>OS / version</th><th>Build</th><th>Runtime identifier</th><th>Apple release date</th><th>Status</th></tr></thead><tbody id="apple-os"></tbody></table>
+  <table><thead><tr><th>OS / version</th><th>Build</th><th>Runtime identifier</th><th>Apple official release date</th><th>Official source</th><th>Runner status</th></tr></thead><tbody id="apple-os"></tbody></table>
   <h2>Installed iOS Runtimes</h2>
-  <table><thead><tr><th>Version</th><th>Build</th><th>Identifier</th><th>Apple release date</th><th>Status</th></tr></thead><tbody id="runtimes"></tbody></table>
+  <table><thead><tr><th>Version</th><th>Build</th><th>Identifier</th><th>Apple official release date</th><th>Official source</th><th>Runner status</th></tr></thead><tbody id="runtimes"></tbody></table>
   <h2>iPhone Simulator hardware</h2>
-  <table><thead><tr><th>Model</th><th>Identifier</th><th>Hardware release date</th><th>Availability</th></tr></thead><tbody id="devices"></tbody></table>
+  <table><thead><tr><th>Model</th><th>Identifier</th><th>Hardware official release date</th><th>Official source</th><th>Runner status</th></tr></thead><tbody id="devices"></tbody></table>
   <table>
     <thead><tr><th>Capability</th><th>Status</th><th>Details</th></tr></thead>
     <tbody id="tests"></tbody>
@@ -80,6 +80,12 @@
     function dateValue(value) {
       return /^\d{4}-\d{2}-\d{2}$/.test(value || "") ? value : "";
     }
+    function formatDate(value) {
+      const date = dateValue(value);
+      if (!date) return escapeHtml(value || "待核实");
+      const [year, month, day] = date.split("-");
+      return `${year}年${month}月${day}日`;
+    }
     function sortNewest(a, b) {
       return (dateValue(b.official_release_date) || "0000-00-00").localeCompare(dateValue(a.official_release_date) || "0000-00-00");
     }
@@ -101,13 +107,13 @@
         `<tr><td><code>${escapeHtml(r.label)}</code></td><td>${escapeHtml(r.os)}</td><td>${escapeHtml(r.architecture)}</td><td>${escapeHtml(r.cpu)}</td><td>${escapeHtml(r.ram_gb)} GB</td><td>${escapeHtml(r.storage_gb)} GB</td><td>${escapeHtml(r.status)}</td></tr>`
       ).join("");
       document.getElementById("apple-os").innerHTML = appleOs.map(r =>
-        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td class="date">${escapeHtml(r.official_release_date)}</td><td>${escapeHtml(r.availability)}</td></tr>`
+        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td class="date">${formatDate(r.official_release_date)}</td><td><a href="https://support.apple.com/en-us/100100" target="_blank" rel="noreferrer">Apple release notes</a></td><td>${escapeHtml(r.availability)}</td></tr>`
       ).join("");
       document.getElementById("runtimes").innerHTML = runtimes.map(r =>
-        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td class="date">${escapeHtml(r.official_release_date)}</td><td>${escapeHtml(r.availability)}</td></tr>`
+        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td class="date">${formatDate(r.official_release_date)}</td><td><a href="https://support.apple.com/en-us/100100" target="_blank" rel="noreferrer">Apple release notes</a></td><td>${escapeHtml(r.availability)}</td></tr>`
       ).join("");
       document.getElementById("devices").innerHTML = devices.map(d =>
-        `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td class="date">${escapeHtml(d.official_release_date)}</td><td>Installed device type</td></tr>`
+        `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td class="date">${formatDate(d.official_release_date)}</td><td><a href="https://www.apple.com/iphone/" target="_blank" rel="noreferrer">Apple iPhone</a></td><td>Installed device type</td></tr>`
       ).join("");
       document.getElementById("stats").innerHTML =
         `<span class="stat">Runner: ${runners.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span>`;
