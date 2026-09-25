@@ -50,7 +50,8 @@ jobs:
           simulator_home="$(xcrun simctl getenv "$device_id" HOME)"
           system_environment_status="failed"
           if [[ -n "$simulator_home" ]] &&
-             xcrun simctl spawn "$device_id" sh -c 'test -d "$HOME" && test -r "$HOME"' >/dev/null 2>&1; then
+             [[ -d "$simulator_home" && -r "$simulator_home" ]] &&
+             xcrun simctl spawn "$device_id" /usr/bin/true >/dev/null 2>&1; then
             system_environment_status="passed"
           fi
           privacy_help="$(xcrun simctl privacy help 2>&1 || true)"
