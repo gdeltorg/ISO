@@ -266,6 +266,8 @@ jobs:
                   "reason": "Not present in the selected GitHub Actions macOS-15 image; this is not evidence that Apple has not released it."
               }] if not any(r["version"].startswith("iOS 27") for r in runtimes) else [],
               "scope": "Apple Simulator and simctl system capabilities; no app-specific or account flows",
+              "vendor_catalog_last_checked": datetime.now(timezone.utc).isoformat(),
+              "vendor_catalog_sync_policy": "Official release status and dates require an official vendor source; Runner presence requires current simctl or runner-label evidence. Unverified products are not assigned an invented date.",
               "tests": tests,
           }
           pathlib.Path(sys.argv[2]).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
