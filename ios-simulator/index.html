@@ -105,7 +105,8 @@
       return item.runner_install_date || "未公开/未记录";
     }
     function sortNewest(a, b) {
-      return (dateValue(b.official_release_date) || "0000-00-00").localeCompare(dateValue(a.official_release_date) || "0000-00-00");
+      const dateFor = item => dateValue(item.official_release_date || item.os_release_date);
+      return (dateFor(b) || "0000-00-00").localeCompare(dateFor(a) || "0000-00-00");
     }
     function matches(item, kind, query, dateMode) {
       const text = JSON.stringify(item).toLowerCase();
@@ -117,7 +118,10 @@
     function renderCatalog() {
       const query = searchFilter.value.trim().toLowerCase();
       const dateMode = dateFilter.value;
-      const runners = (reportData.runner_catalog || []).filter(r => matches(r, "runner", query, dateMode));
+      const runners = (reportData.runner_catalog || []).filter(r => {
+        const item = { ...r, official_release_date: r.os_release_date };
+        return matches(item, "runner", query, dateMode);
+      }).sort(sortNewest);
       const operatingSystems = (reportData.operating_system_catalog || []).filter(r => matches(r, "operating-system", query, dateMode)).sort(sortNewest);
       const cloudInstances = (reportData.cloud_instance_catalog || []).filter(r => matches(r, "cloud-instance", query, dateMode));
       const appleOs = (reportData.apple_os_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
