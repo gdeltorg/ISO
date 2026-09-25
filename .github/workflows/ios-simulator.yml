@@ -25,6 +25,7 @@ jobs:
           xcodebuild -version
           xcrun simctl list runtimes | tee "$RUNNER_TEMP/simulator-runtimes.txt"
           xcrun simctl list devicetypes | tee "$RUNNER_TEMP/simulator-devicetypes.txt"
+          xcrun simctl list devicetypes | awk '/Watch/ {print}' | tee "$RUNNER_TEMP/watch-devicetypes.txt"
 
       - name: Boot an iPhone Simulator
         shell: bash
@@ -59,7 +60,7 @@ jobs:
               "$([ "$(xcrun simctl privacy help >/dev/null 2>&1; echo $?)" -eq 0 ] && echo passed || echo failed)"
             printf '{"name":"Diagnostics","status":"passed","details":"simctl diagnose"}\n'
           } > "$RUNNER_TEMP/simulator-tests.ndjson"
-          python3 - "$RUNNER_TEMP/simulator-tests.ndjson" "$GITHUB_WORKSPACE/ios-simulator/report.json" "$runtime" "$RUNNER_TEMP/simulator-runtimes.txt" "$RUNNER_TEMP/simulator-devicetypes.txt" "$RUNNER_TEMP/host-os-version.txt" <<'PY'
+          python3 - "$RUNNER_TEMP/simulator-tests.ndjson" "$GITHUB_WORKSPACE/ios-simulator/report.json" "$runtime" "$RUNNER_TEMP/simulator-runtimes.txt" "$RUNNER_TEMP/simulator-devicetypes.txt" "$RUNNER_TEMP/host-os-version.txt" "$RUNNER_TEMP/watch-devicetypes.txt" <<'PY'
           import json
           import pathlib
           import sys
@@ -68,6 +69,7 @@ jobs:
           tests = [json.loads(line) for line in pathlib.Path(sys.argv[1]).read_text().splitlines()]
           runtime_lines = pathlib.Path(sys.argv[4]).read_text().splitlines()
           host_os_version = pathlib.Path(sys.argv[6]).read_text().strip()
+          watch_device_lines = pathlib.Path(sys.argv[7]).read_text().splitlines()
           runtimes = []
           apple_os = []
           release_dates = {
@@ -154,6 +156,11 @@ jobs:
                       "runner_observed_at": datetime.now(timezone.utc).isoformat(),
                       "family": generation.group(0) if generation else "iPhone"
                   })
+          watch_devices = []
+          for line in watch_device_lines:
+              match = re.search(r'^\s*(Apple Watch.*?)\s+\((com\.apple\.CoreSimulator\.SimDeviceType\.[^)]+)\)', line)
+              if match:
+                  watch_devices.append({"name": match.group(1), "identifier": match.group(2)})
           report = {
               "generated_at": datetime.now(timezone.utc).isoformat(),
               "runtime": sys.argv[3],
@@ -189,6 +196,11 @@ jobs:
                   {"provider": "Google Cloud", "instance_type": "e2-standard-2", "vcpus": 2, "ram_gib": 8, "disk": "14 GB runner workspace (persistent disk not specified)", "runner_labels": "ubuntu-slim / 2-vCPU class", "basis": "closest published CPU/RAM profile", "status": "reference equivalent, not confirmed GitHub backing instance"},
                   {"provider": "Google Cloud", "instance_type": "e2-standard-4", "vcpus": 4, "ram_gib": 16, "disk": "14 GB runner workspace (persistent disk not specified)", "runner_labels": "ubuntu-24.04, ubuntu-22.04, windows-2025, windows-2022", "basis": "closest published CPU/RAM profile", "status": "reference equivalent, not confirmed GitHub backing instance"}
               ],
+              "watchos_simulator": {
+                  "runtime_versions": [r for r in apple_os if r["version"].startswith("watchOS ")],
+                  "device_types": watch_devices,
+                  "status": "runtime and device profiles detected; create/boot test not run" if any(r["version"].startswith("watchOS ") for r in apple_os) and watch_devices else "not available in this runner image"
+              },
               "apple_os_catalog": apple_os,
               "runtime_catalog": runtimes,
               "iphone_simulator_catalog": devices,

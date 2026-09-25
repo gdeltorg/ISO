@@ -61,6 +61,10 @@
   <table><thead><tr><th>Version</th><th>Build</th><th>Identifier</th><th>Apple official release date</th><th>Runner install date</th><th>Runner observed date</th><th>Official source</th><th>Runner status</th></tr></thead><tbody id="runtimes"></tbody></table>
   <h2>iPhone Simulator hardware</h2>
   <table><thead><tr><th>Model</th><th>Identifier</th><th>Hardware official release date</th><th>Runner install date</th><th>Runner observed date</th><th>Official source</th><th>Runner status</th></tr></thead><tbody id="devices"></tbody></table>
+  <h2>watchOS Simulator availability</h2>
+  <p id="watchos-summary" class="meta"></p>
+  <table><thead><tr><th>watchOS Runtime</th><th>Build</th><th>Runtime identifier</th><th>Runner status</th></tr></thead><tbody id="watchos-runtimes"></tbody></table>
+  <table><thead><tr><th>Apple Watch device profile</th><th>Simulator identifier</th></tr></thead><tbody id="watchos-devices"></tbody></table>
   <table>
     <thead><tr><th>Capability</th><th>Status</th><th>Details</th></tr></thead>
     <tbody id="tests"></tbody>
@@ -127,6 +131,7 @@
       const appleOs = (reportData.apple_os_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const runtimes = (reportData.runtime_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const devices = (reportData.iphone_simulator_catalog || []).filter(r => matches(r, "iphone", query, dateMode)).sort(sortNewest);
+      const watchos = reportData.watchos_simulator || { runtime_versions: [], device_types: [], status: "未检测" };
       document.getElementById("runners").innerHTML = runners.map(r =>
         `<tr><td><code>${escapeHtml(r.label)}</code></td><td>${escapeHtml(r.os)}</td><td><code>${escapeHtml(r.observed_os_version || "not observed in this run")}</code></td><td class="date">${formatDate(r.os_release_date)}</td><td>${escapeHtml(r.architecture)}</td><td>${escapeHtml(r.cpu)}</td><td>${escapeHtml(r.ram_gb)} GB</td><td>${escapeHtml(r.storage_gb)} GB</td><td>${escapeHtml(r.status)}</td></tr>`
       ).join("");
@@ -144,6 +149,14 @@
       ).join("");
       document.getElementById("devices").innerHTML = devices.map(d =>
         `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td class="date">${formatDate(d.official_release_date)}</td><td>${escapeHtml(runnerInstallDate(d))}</td><td class="date">${formatObservedDate(d.runner_observed_at)}</td><td><a href="https://www.apple.com/iphone/" target="_blank" rel="noreferrer">Apple iPhone</a></td><td>Installed device type</td></tr>`
+      ).join("");
+      document.getElementById("watchos-summary").textContent =
+        `状态：${watchos.status}。Apple Watch Series 12 / Ultra 4 只有在 runner 同时提供对应 Runtime 与 device profile 时才能创建并启动；Apple 安全更新发布日期不代表 runner 已安装。`;
+      document.getElementById("watchos-runtimes").innerHTML = (watchos.runtime_versions || []).map(r =>
+        `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td>${escapeHtml(r.availability)}</td></tr>`
+      ).join("");
+      document.getElementById("watchos-devices").innerHTML = (watchos.device_types || []).map(d =>
+        `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td></tr>`
       ).join("");
       document.getElementById("stats").innerHTML =
         `<span class="stat">Runner: ${runners.length}</span><span class="stat">操作系统: ${operatingSystems.length}</span><span class="stat">云实例参考: ${cloudInstances.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span>`;
