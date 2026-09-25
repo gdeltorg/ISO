@@ -31,6 +31,7 @@
         <option value="runner">Runner</option>
         <option value="operating-system">操作系统</option>
         <option value="cloud-instance">云实例参考</option>
+        <option value="compatibility">OS ↔ 硬件兼容</option>
         <option value="apple-os">Apple Runtime</option>
         <option value="iphone">iPhone 硬件</option>
       </select>
@@ -69,6 +70,9 @@
   <p id="watchos-summary" class="meta"></p>
   <table><thead><tr><th>watchOS Runtime</th><th>Build</th><th>Runtime identifier</th><th>Runner status</th></tr></thead><tbody id="watchos-runtimes"></tbody></table>
   <table><thead><tr><th>Apple Watch device profile</th><th>Simulator identifier</th></tr></thead><tbody id="watchos-devices"></tbody></table>
+  <h2>Apple OS ↔ hardware compatibility</h2>
+  <p class="meta">This matrix separates Apple’s supported hardware scope from the Simulator profiles installed on the selected GitHub runner. A hardware support statement does not mean that the physical device is present on the runner.</p>
+  <table><thead><tr><th>Platform</th><th>Apple OS version</th><th>Apple official release date</th><th>Supported Apple hardware</th><th>Simulator profiles</th><th>Runner status</th><th>Apple official source</th></tr></thead><tbody id="compatibility"></tbody></table>
   <table>
     <thead><tr><th>Capability</th><th>Status</th><th>Details</th></tr></thead>
     <tbody id="tests"></tbody>
@@ -132,6 +136,7 @@
       }).sort(sortNewest);
       const operatingSystems = (reportData.operating_system_catalog || []).filter(r => matches(r, "operating-system", query, dateMode)).sort(sortNewest);
       const cloudInstances = (reportData.cloud_instance_catalog || []).filter(r => matches(r, "cloud-instance", query, dateMode));
+      const compatibility = (reportData.apple_compatibility_catalog || []).filter(r => matches(r, "compatibility", query, dateMode)).sort(sortNewest);
       const appleOs = (reportData.apple_os_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const runtimes = (reportData.runtime_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const devices = (reportData.iphone_simulator_catalog || []).filter(r => matches(r, "iphone", query, dateMode)).sort(sortNewest);
@@ -171,8 +176,11 @@
       document.getElementById("watchos-devices").innerHTML = (watchos.device_types || []).map(d =>
         `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td></tr>`
       ).join("");
+      document.getElementById("compatibility").innerHTML = compatibility.map(r =>
+        `<tr><td>${escapeHtml(r.platform)}</td><td>${escapeHtml(r.os_version)}</td><td class="date">${formatDate(r.official_release_date)}</td><td>${escapeHtml(r.hardware)}</td><td>${escapeHtml(r.simulator_profiles)}</td><td>${escapeHtml(r.runner_status)}</td><td><a href="${escapeHtml(r.official_url)}" target="_blank" rel="noreferrer">Apple 官方页面</a></td></tr>`
+      ).join("");
       document.getElementById("stats").innerHTML =
-        `<span class="stat">Runner: ${runners.length}</span><span class="stat">操作系统: ${operatingSystems.length}</span><span class="stat">云实例参考: ${cloudInstances.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span><span class="stat">iPad: ${ipads.length}</span>`;
+        `<span class="stat">Runner: ${runners.length}</span><span class="stat">操作系统: ${operatingSystems.length}</span><span class="stat">云实例参考: ${cloudInstances.length}</span><span class="stat">OS↔硬件: ${compatibility.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span><span class="stat">iPad: ${ipads.length}</span>`;
     }
     const typeFilter = document.getElementById("type-filter");
     const searchFilter = document.getElementById("search-filter");
