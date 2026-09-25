@@ -165,7 +165,21 @@ jobs:
                   {"label": "macos-26", "os": "macOS Tahoe 26", "os_release_date": "2025-09-15", "observed_os_version": "not observed in this run", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
                   {"label": "macos-26-intel", "os": "macOS Tahoe 26", "os_release_date": "2025-09-15", "observed_os_version": "not observed in this run", "architecture": "x86_64 Intel", "cpu": 4, "ram_gb": 14, "storage_gb": 14, "status": "public standard"},
                   {"label": "macos-latest", "os": "macOS version follows GitHub latest", "os_release_date": "see selected image", "observed_os_version": "not observed in this run", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "moving label"},
-                  {"label": "xcode-27", "os": "macOS Tahoe 26", "os_release_date": "2025-09-15", "observed_os_version": "not observed in this run", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public preview"}
+                  {"label": "xcode-27", "os": "macOS Tahoe 26", "os_release_date": "2025-09-15", "observed_os_version": "not observed in this run", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public preview"},
+                  {"label": "ubuntu-24.04", "os": "Ubuntu 24.04 LTS", "os_release_date": "2024-04-25", "observed_os_version": "not observed in this run", "architecture": "x86_64", "cpu": 4, "ram_gb": 16, "storage_gb": 14, "status": "public standard"},
+                  {"label": "ubuntu-22.04", "os": "Ubuntu 22.04 LTS", "os_release_date": "2022-04-21", "observed_os_version": "not observed in this run", "architecture": "x86_64", "cpu": 4, "ram_gb": 16, "storage_gb": 14, "status": "public standard"},
+                  {"label": "ubuntu-slim", "os": "Ubuntu slim (version follows image)", "os_release_date": "see selected image", "observed_os_version": "not observed in this run", "architecture": "x86_64", "cpu": 1, "ram_gb": 5, "storage_gb": 14, "status": "public standard"},
+                  {"label": "windows-2025", "os": "Windows Server 2025", "os_release_date": "2024-11-01", "observed_os_version": "not observed in this run", "architecture": "x86_64", "cpu": 4, "ram_gb": 16, "storage_gb": 14, "status": "public standard"},
+                  {"label": "windows-2022", "os": "Windows Server 2022", "os_release_date": "2021-08-18", "observed_os_version": "not observed in this run", "architecture": "x86_64", "cpu": 4, "ram_gb": 16, "storage_gb": 14, "status": "public standard"}
+              ],
+              "operating_system_catalog": [
+                  {"vendor": "Apple", "family": "macOS", "version": "14 Sonoma", "official_release_date": "2023-09-26", "runner_labels": "macos-14", "status": "GitHub label"},
+                  {"vendor": "Apple", "family": "macOS", "version": "15 Sequoia", "official_release_date": "2024-09-16", "runner_labels": "macos-15, macos-15-intel", "status": "GitHub label"},
+                  {"vendor": "Apple", "family": "macOS", "version": "26 Tahoe", "official_release_date": "2025-09-15", "runner_labels": "macos-26, macos-26-intel, xcode-27", "status": "GitHub label / preview"},
+                  {"vendor": "Microsoft", "family": "Windows Server", "version": "2025", "official_release_date": "2024-11-01", "runner_labels": "windows-2025", "status": "GitHub label"},
+                  {"vendor": "Microsoft", "family": "Windows Server", "version": "2022", "official_release_date": "2021-08-18", "runner_labels": "windows-2022", "status": "GitHub label"},
+                  {"vendor": "Canonical", "family": "Ubuntu", "version": "24.04 LTS", "official_release_date": "2024-04-25", "runner_labels": "ubuntu-24.04", "status": "GitHub label"},
+                  {"vendor": "Canonical", "family": "Ubuntu", "version": "22.04 LTS", "official_release_date": "2022-04-21", "runner_labels": "ubuntu-22.04, ubuntu-latest", "status": "GitHub label"}
               ],
               "apple_os_catalog": apple_os,
               "runtime_catalog": runtimes,

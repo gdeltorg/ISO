@@ -29,6 +29,7 @@
       <select id="type-filter">
         <option value="all">全部</option>
         <option value="runner">Runner</option>
+        <option value="operating-system">操作系统</option>
         <option value="apple-os">Apple Runtime</option>
         <option value="iphone">iPhone 硬件</option>
       </select>
@@ -45,6 +46,9 @@
   <div id="stats" class="stats" aria-live="polite"></div>
   <h2>GitHub-hosted macOS runners</h2>
   <table><thead><tr><th>Workflow label</th><th>Apple OS</th><th>Exact version observed</th><th>Apple official release date</th><th>Architecture</th><th>CPU</th><th>RAM</th><th>SSD</th><th>Status</th></tr></thead><tbody id="runners"></tbody></table>
+  <h2>Operating-system release catalog</h2>
+  <p class="meta">This catalog separates vendor release dates from GitHub workflow labels. A runner label is not itself an operating-system product name.</p>
+  <table><thead><tr><th>Vendor</th><th>Operating system</th><th>Version</th><th>Official release date</th><th>Corresponding GitHub runner labels</th><th>Status</th></tr></thead><tbody id="operating-systems"></tbody></table>
   <h2>Apple operating-system Runtimes installed on this runner</h2>
   <p class="meta">“Runner install date” is shown only when GitHub publishes an exact image-install date. “Runner observed date” is when this workflow detected the Runtime; it is not the Apple release date.</p>
   <table><thead><tr><th>OS / version</th><th>Build</th><th>Runtime identifier</th><th>Apple official release date</th><th>Runner install date</th><th>Runner observed date</th><th>Official source</th><th>Runner status</th></tr></thead><tbody id="apple-os"></tbody></table>
@@ -109,11 +113,15 @@
       const query = searchFilter.value.trim().toLowerCase();
       const dateMode = dateFilter.value;
       const runners = (reportData.runner_catalog || []).filter(r => matches(r, "runner", query, dateMode));
+      const operatingSystems = (reportData.operating_system_catalog || []).filter(r => matches(r, "operating-system", query, dateMode)).sort(sortNewest);
       const appleOs = (reportData.apple_os_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const runtimes = (reportData.runtime_catalog || []).filter(r => matches(r, "apple-os", query, dateMode)).sort(sortNewest);
       const devices = (reportData.iphone_simulator_catalog || []).filter(r => matches(r, "iphone", query, dateMode)).sort(sortNewest);
       document.getElementById("runners").innerHTML = runners.map(r =>
         `<tr><td><code>${escapeHtml(r.label)}</code></td><td>${escapeHtml(r.os)}</td><td><code>${escapeHtml(r.observed_os_version || "not observed in this run")}</code></td><td class="date">${formatDate(r.os_release_date)}</td><td>${escapeHtml(r.architecture)}</td><td>${escapeHtml(r.cpu)}</td><td>${escapeHtml(r.ram_gb)} GB</td><td>${escapeHtml(r.storage_gb)} GB</td><td>${escapeHtml(r.status)}</td></tr>`
+      ).join("");
+      document.getElementById("operating-systems").innerHTML = operatingSystems.map(r =>
+        `<tr><td>${escapeHtml(r.vendor)}</td><td>${escapeHtml(r.family)}</td><td>${escapeHtml(r.version)}</td><td class="date">${formatDate(r.official_release_date)}</td><td><code>${escapeHtml(r.runner_labels)}</code></td><td>${escapeHtml(r.status)}</td></tr>`
       ).join("");
       document.getElementById("apple-os").innerHTML = appleOs.map(r =>
         `<tr><td>${escapeHtml(r.version)}</td><td>${escapeHtml(r.build)}</td><td><code>${escapeHtml(r.identifier)}</code></td><td class="date">${formatDate(r.official_release_date)}</td><td>${escapeHtml(runnerInstallDate(r))}</td><td class="date">${formatObservedDate(r.runner_observed_at)}</td><td><a href="https://support.apple.com/en-us/100100" target="_blank" rel="noreferrer">Apple release notes</a></td><td>${escapeHtml(r.availability)}</td></tr>`
@@ -125,7 +133,7 @@
         `<tr><td>${escapeHtml(d.name)}</td><td><code>${escapeHtml(d.identifier)}</code></td><td class="date">${formatDate(d.official_release_date)}</td><td>${escapeHtml(runnerInstallDate(d))}</td><td class="date">${formatObservedDate(d.runner_observed_at)}</td><td><a href="https://www.apple.com/iphone/" target="_blank" rel="noreferrer">Apple iPhone</a></td><td>Installed device type</td></tr>`
       ).join("");
       document.getElementById("stats").innerHTML =
-        `<span class="stat">Runner: ${runners.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span>`;
+        `<span class="stat">Runner: ${runners.length}</span><span class="stat">操作系统: ${operatingSystems.length}</span><span class="stat">Apple Runtime: ${appleOs.length}</span><span class="stat">iOS Runtime: ${runtimes.length}</span><span class="stat">iPhone: ${devices.length}</span>`;
     }
     const typeFilter = document.getElementById("type-filter");
     const searchFilter = document.getElementById("search-filter");
