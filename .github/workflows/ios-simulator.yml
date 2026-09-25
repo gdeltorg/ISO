@@ -219,6 +219,7 @@ jobs:
             echo "Simulator report is unchanged."
           else
             git commit -m "Update iOS Simulator test report"
+            git pull --rebase origin main
             git push
           fi
 
