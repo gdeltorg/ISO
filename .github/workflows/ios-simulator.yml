@@ -20,6 +20,7 @@ jobs:
       - name: Report Apple tooling
         run: |
           sw_vers
+          sw_vers -productVersion | tee "$RUNNER_TEMP/host-os-version.txt"
           xcode-select -p
           xcodebuild -version
           xcrun simctl list runtimes | tee "$RUNNER_TEMP/simulator-runtimes.txt"
@@ -58,7 +59,7 @@ jobs:
               "$([ "$(xcrun simctl privacy help >/dev/null 2>&1; echo $?)" -eq 0 ] && echo passed || echo failed)"
             printf '{"name":"Diagnostics","status":"passed","details":"simctl diagnose"}\n'
           } > "$RUNNER_TEMP/simulator-tests.ndjson"
-          python3 - "$RUNNER_TEMP/simulator-tests.ndjson" "$GITHUB_WORKSPACE/ios-simulator/report.json" "$runtime" "$RUNNER_TEMP/simulator-runtimes.txt" "$RUNNER_TEMP/simulator-devicetypes.txt" <<'PY'
+          python3 - "$RUNNER_TEMP/simulator-tests.ndjson" "$GITHUB_WORKSPACE/ios-simulator/report.json" "$runtime" "$RUNNER_TEMP/simulator-runtimes.txt" "$RUNNER_TEMP/simulator-devicetypes.txt" "$RUNNER_TEMP/host-os-version.txt" <<'PY'
           import json
           import pathlib
           import sys
@@ -66,6 +67,7 @@ jobs:
           from datetime import datetime, timezone
           tests = [json.loads(line) for line in pathlib.Path(sys.argv[1]).read_text().splitlines()]
           runtime_lines = pathlib.Path(sys.argv[4]).read_text().splitlines()
+          host_os_version = pathlib.Path(sys.argv[6]).read_text().strip()
           runtimes = []
           apple_os = []
           release_dates = {
@@ -157,13 +159,13 @@ jobs:
               "runtime": sys.argv[3],
               "device": "iPhone 17 Pro",
               "runner_catalog": [
-                  {"label": "macos-15", "os": "macOS 15", "architecture": "arm64 (M1)", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
-                  {"label": "macos-15-intel", "os": "macOS 15", "architecture": "x86_64 Intel", "cpu": 4, "ram_gb": 14, "storage_gb": 14, "status": "public standard"},
-                  {"label": "macos-14", "os": "macOS 14", "architecture": "arm64 (M1)", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
-                  {"label": "macos-26", "os": "macOS 26", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
-                  {"label": "macos-26-intel", "os": "macOS 26", "architecture": "x86_64 Intel", "cpu": 4, "ram_gb": 14, "storage_gb": 14, "status": "public standard"},
-                  {"label": "macos-latest", "os": "macOS latest", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "moving label"},
-                  {"label": "xcode-27", "os": "macOS 26", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public preview"}
+                  {"label": "macos-15", "os": "macOS Sequoia 15", "os_release_date": "2024-09-16", "observed_os_version": host_os_version, "architecture": "arm64 (M1)", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-15-intel", "os": "macOS Sequoia 15", "os_release_date": "2024-09-16", "observed_os_version": "not observed in this run", "architecture": "x86_64 Intel", "cpu": 4, "ram_gb": 14, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-14", "os": "macOS Sonoma 14", "os_release_date": "2023-09-26", "observed_os_version": "not observed in this run", "architecture": "arm64 (M1)", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-26", "os": "macOS Tahoe 26", "os_release_date": "2025-09-15", "observed_os_version": "not observed in this run", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-26-intel", "os": "macOS Tahoe 26", "os_release_date": "2025-09-15", "observed_os_version": "not observed in this run", "architecture": "x86_64 Intel", "cpu": 4, "ram_gb": 14, "storage_gb": 14, "status": "public standard"},
+                  {"label": "macos-latest", "os": "macOS version follows GitHub latest", "os_release_date": "see selected image", "observed_os_version": "not observed in this run", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "moving label"},
+                  {"label": "xcode-27", "os": "macOS Tahoe 26", "os_release_date": "2025-09-15", "observed_os_version": "not observed in this run", "architecture": "arm64", "cpu": 3, "ram_gb": 7, "storage_gb": 14, "status": "public preview"}
               ],
               "apple_os_catalog": apple_os,
               "runtime_catalog": runtimes,
