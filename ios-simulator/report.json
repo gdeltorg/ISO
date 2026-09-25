@@ -1,11 +1,13 @@
 {
-  "generated_at": "2026-09-23T06:51:35.821989+00:00",
+  "generated_at": "2026-09-25T04:52:04.144016+00:00",
   "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
   "device": "iPhone 17 Pro",
   "runner_catalog": [
     {
       "label": "macos-15",
-      "os": "macOS 15",
+      "os": "macOS Sequoia 15",
+      "os_release_date": "2024-09-16",
+      "observed_os_version": "15.7.9",
       "architecture": "arm64 (M1)",
       "cpu": 3,
       "ram_gb": 7,
@@ -14,7 +16,9 @@
     },
     {
       "label": "macos-15-intel",
-      "os": "macOS 15",
+      "os": "macOS Sequoia 15",
+      "os_release_date": "2024-09-16",
+      "observed_os_version": "not observed in this run",
       "architecture": "x86_64 Intel",
       "cpu": 4,
       "ram_gb": 14,
@@ -23,7 +27,9 @@
     },
     {
       "label": "macos-14",
-      "os": "macOS 14",
+      "os": "macOS Sonoma 14",
+      "os_release_date": "2023-09-26",
+      "observed_os_version": "not observed in this run",
       "architecture": "arm64 (M1)",
       "cpu": 3,
       "ram_gb": 7,
@@ -32,7 +38,9 @@
     },
     {
       "label": "macos-26",
-      "os": "macOS 26",
+      "os": "macOS Tahoe 26",
+      "os_release_date": "2025-09-15",
+      "observed_os_version": "not observed in this run",
       "architecture": "arm64",
       "cpu": 3,
       "ram_gb": 7,
@@ -41,7 +49,9 @@
     },
     {
       "label": "macos-26-intel",
-      "os": "macOS 26",
+      "os": "macOS Tahoe 26",
+      "os_release_date": "2025-09-15",
+      "observed_os_version": "not observed in this run",
       "architecture": "x86_64 Intel",
       "cpu": 4,
       "ram_gb": 14,
@@ -50,7 +60,9 @@
     },
     {
       "label": "macos-latest",
-      "os": "macOS latest",
+      "os": "macOS version follows GitHub latest",
+      "os_release_date": "see selected image",
+      "observed_os_version": "not observed in this run",
       "architecture": "arm64",
       "cpu": 3,
       "ram_gb": 7,
@@ -59,12 +71,127 @@
     },
     {
       "label": "xcode-27",
-      "os": "macOS 26",
+      "os": "macOS Tahoe 26",
+      "os_release_date": "2025-09-15",
+      "observed_os_version": "not observed in this run",
       "architecture": "arm64",
       "cpu": 3,
       "ram_gb": 7,
       "storage_gb": 14,
       "status": "public preview"
+    },
+    {
+      "label": "ubuntu-24.04",
+      "os": "Ubuntu 24.04 LTS",
+      "os_release_date": "2024-04-25",
+      "observed_os_version": "not observed in this run",
+      "architecture": "x86_64",
+      "cpu": 4,
+      "ram_gb": 16,
+      "storage_gb": 14,
+      "status": "public standard"
+    },
+    {
+      "label": "ubuntu-22.04",
+      "os": "Ubuntu 22.04 LTS",
+      "os_release_date": "2022-04-21",
+      "observed_os_version": "not observed in this run",
+      "architecture": "x86_64",
+      "cpu": 4,
+      "ram_gb": 16,
+      "storage_gb": 14,
+      "status": "public standard"
+    },
+    {
+      "label": "ubuntu-slim",
+      "os": "Ubuntu slim (version follows image)",
+      "os_release_date": "see selected image",
+      "observed_os_version": "not observed in this run",
+      "architecture": "x86_64",
+      "cpu": 1,
+      "ram_gb": 5,
+      "storage_gb": 14,
+      "status": "public standard"
+    },
+    {
+      "label": "windows-2025",
+      "os": "Windows Server 2025",
+      "os_release_date": "2024-11-01",
+      "observed_os_version": "not observed in this run",
+      "architecture": "x86_64",
+      "cpu": 4,
+      "ram_gb": 16,
+      "storage_gb": 14,
+      "status": "public standard"
+    },
+    {
+      "label": "windows-2022",
+      "os": "Windows Server 2022",
+      "os_release_date": "2021-08-18",
+      "observed_os_version": "not observed in this run",
+      "architecture": "x86_64",
+      "cpu": 4,
+      "ram_gb": 16,
+      "storage_gb": 14,
+      "status": "public standard"
+    }
+  ],
+  "operating_system_catalog": [
+    {
+      "vendor": "Apple",
+      "family": "macOS",
+      "version": "14 Sonoma",
+      "official_release_date": "2023-09-26",
+      "runner_labels": "macos-14",
+      "status": "GitHub label"
+    },
+    {
+      "vendor": "Apple",
+      "family": "macOS",
+      "version": "15 Sequoia",
+      "official_release_date": "2024-09-16",
+      "runner_labels": "macos-15, macos-15-intel",
+      "status": "GitHub label"
+    },
+    {
+      "vendor": "Apple",
+      "family": "macOS",
+      "version": "26 Tahoe",
+      "official_release_date": "2025-09-15",
+      "runner_labels": "macos-26, macos-26-intel, xcode-27",
+      "status": "GitHub label / preview"
+    },
+    {
+      "vendor": "Microsoft",
+      "family": "Windows Server",
+      "version": "2025",
+      "official_release_date": "2024-11-01",
+      "runner_labels": "windows-2025",
+      "status": "GitHub label"
+    },
+    {
+      "vendor": "Microsoft",
+      "family": "Windows Server",
+      "version": "2022",
+      "official_release_date": "2021-08-18",
+      "runner_labels": "windows-2022",
+      "status": "GitHub label"
+    },
+    {
+      "vendor": "Canonical",
+      "family": "Ubuntu",
+      "version": "24.04 LTS",
+      "official_release_date": "2024-04-25",
+      "runner_labels": "ubuntu-24.04",
+      "status": "GitHub label"
+    },
+    {
+      "vendor": "Canonical",
+      "family": "Ubuntu",
+      "version": "22.04 LTS",
+      "official_release_date": "2022-04-21",
+      "runner_labels": "ubuntu-22.04, ubuntu-latest",
+      "status": "GitHub label"
     }
   ],
   "apple_os_catalog": [
@@ -73,112 +200,144 @@
       "build": "18.5 - 22F77",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-18-5",
       "availability": "installed on this runner",
-      "official_release_date": "2025-05-12"
+      "official_release_date": "2025-05-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141080+00:00"
     },
     {
       "version": "iOS 18.6",
       "build": "18.6 - 22G86",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-18-6",
       "availability": "installed on this runner",
-      "official_release_date": "2025-07-29"
+      "official_release_date": "2025-07-29",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141484+00:00"
     },
     {
       "version": "iOS 26.0",
       "build": "26.0.1 - 23A8464",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-0",
       "availability": "installed on this runner",
-      "official_release_date": "2025-09-15"
+      "official_release_date": "2025-09-15",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141496+00:00"
     },
     {
       "version": "iOS 26.1",
       "build": "26.1 - 23B86",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-1",
       "availability": "installed on this runner",
-      "official_release_date": "2025-11-03"
+      "official_release_date": "2025-11-03",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141504+00:00"
     },
     {
       "version": "iOS 26.2",
       "build": "26.2 - 23C54",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
       "availability": "installed on this runner",
-      "official_release_date": "2025-12-12"
+      "official_release_date": "2025-12-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141512+00:00"
     },
     {
       "version": "tvOS 18.5",
       "build": "18.5 - 22L572",
       "identifier": "com.apple.CoreSimulator.SimRuntime.tvOS-18-5",
       "availability": "installed on this runner",
-      "official_release_date": "2025-05-12"
+      "official_release_date": "2025-05-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141520+00:00"
     },
     {
       "version": "tvOS 26.1",
       "build": "26.1 - 23J579",
       "identifier": "com.apple.CoreSimulator.SimRuntime.tvOS-26-1",
       "availability": "installed on this runner",
-      "official_release_date": "2025-11-03"
+      "official_release_date": "2025-11-03",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141527+00:00"
     },
     {
       "version": "tvOS 26.2",
       "build": "26.2 - 23K51",
       "identifier": "com.apple.CoreSimulator.SimRuntime.tvOS-26-2",
       "availability": "installed on this runner",
-      "official_release_date": "2025-12-12"
+      "official_release_date": "2025-12-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141533+00:00"
     },
     {
       "version": "watchOS 11.5",
       "build": "11.5 - 22T572",
       "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-11-5",
       "availability": "installed on this runner",
-      "official_release_date": "2025-05-12"
+      "official_release_date": "2025-05-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141540+00:00"
     },
     {
       "version": "watchOS 26.1",
       "build": "26.1 - 23S36",
       "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-26-1",
       "availability": "installed on this runner",
-      "official_release_date": "2025-11-03"
+      "official_release_date": "2025-11-03",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141547+00:00"
     },
     {
       "version": "watchOS 26.2",
       "build": "26.2 - 23S303",
       "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-26-2",
       "availability": "installed on this runner",
-      "official_release_date": "2025-12-12"
+      "official_release_date": "2025-12-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141554+00:00"
     },
     {
       "version": "visionOS 2.3",
       "build": "2.3 - 22N895",
       "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-2-3",
       "availability": "installed on this runner",
-      "official_release_date": "2024-12-11"
+      "official_release_date": "2024-12-11",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141561+00:00"
     },
     {
       "version": "visionOS 2.4",
       "build": "2.4 - 22O237",
       "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-2-4",
       "availability": "installed on this runner",
-      "official_release_date": "2025-01-31"
+      "official_release_date": "2025-01-31",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141567+00:00"
     },
     {
       "version": "visionOS 2.5",
       "build": "2.5 - 22O473",
       "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-2-5",
       "availability": "installed on this runner",
-      "official_release_date": "2025-05-12"
+      "official_release_date": "2025-05-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141574+00:00"
     },
     {
       "version": "visionOS 26.1",
       "build": "26.1 - 23N47",
       "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-26-1",
       "availability": "installed on this runner",
-      "official_release_date": "2025-11-03"
+      "official_release_date": "2025-11-03",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141580+00:00"
     },
     {
       "version": "visionOS 26.2",
       "build": "26.2 - 23N301",
       "identifier": "com.apple.CoreSimulator.SimRuntime.xrOS-26-2",
       "availability": "installed on this runner",
-      "official_release_date": "2025-12-12"
+      "official_release_date": "2025-12-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141587+00:00"
     }
   ],
   "runtime_catalog": [
@@ -187,35 +346,45 @@
       "build": "18.5 - 22F77",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-18-5",
       "availability": "installed on this runner",
-      "official_release_date": "2025-05-12"
+      "official_release_date": "2025-05-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141080+00:00"
     },
     {
       "version": "iOS 18.6",
       "build": "18.6 - 22G86",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-18-6",
       "availability": "installed on this runner",
-      "official_release_date": "2025-07-29"
+      "official_release_date": "2025-07-29",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141484+00:00"
     },
     {
       "version": "iOS 26.0",
       "build": "26.0.1 - 23A8464",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-0",
       "availability": "installed on this runner",
-      "official_release_date": "2025-09-15"
+      "official_release_date": "2025-09-15",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141496+00:00"
     },
     {
       "version": "iOS 26.1",
       "build": "26.1 - 23B86",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-1",
       "availability": "installed on this runner",
-      "official_release_date": "2025-11-03"
+      "official_release_date": "2025-11-03",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141504+00:00"
     },
     {
       "version": "iOS 26.2",
       "build": "26.2 - 23C54",
       "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
       "availability": "installed on this runner",
-      "official_release_date": "2025-12-12"
+      "official_release_date": "2025-12-12",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.141512+00:00"
     }
   ],
   "iphone_simulator_catalog": [
@@ -223,246 +392,328 @@
       "name": "iPhone 17 Pro",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
       "official_release_date": "2025-09-19",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143359+00:00",
       "family": "iPhone 17"
     },
     {
       "name": "iPhone 17 Pro Max",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max",
       "official_release_date": "2025-09-19",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143398+00:00",
       "family": "iPhone 17"
     },
     {
       "name": "iPhone Air",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Air",
       "official_release_date": "2025-09-19",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143414+00:00",
       "family": "iPhone"
     },
     {
       "name": "iPhone 17",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
       "official_release_date": "2025-09-19",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143427+00:00",
       "family": "iPhone 17"
     },
     {
       "name": "iPhone 16 Pro",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro",
       "official_release_date": "2024-09-20",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143440+00:00",
       "family": "iPhone 16"
     },
     {
       "name": "iPhone 16 Pro Max",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro-Max",
       "official_release_date": "2024-09-20",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143453+00:00",
       "family": "iPhone 16"
     },
     {
       "name": "iPhone 16e",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16e",
       "official_release_date": "2025-02-28",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143466+00:00",
       "family": "iPhone 16"
     },
     {
       "name": "iPhone 16",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16",
       "official_release_date": "2024-09-20",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143478+00:00",
       "family": "iPhone 16"
     },
     {
       "name": "iPhone 16 Plus",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Plus",
       "official_release_date": "2024-09-20",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143491+00:00",
       "family": "iPhone 16"
     },
     {
       "name": "iPhone 15 Pro",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro",
       "official_release_date": "2023-09-22",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143503+00:00",
       "family": "iPhone 15"
     },
     {
       "name": "iPhone 15 Pro Max",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro-Max",
       "official_release_date": "2023-09-22",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143516+00:00",
       "family": "iPhone 15"
     },
     {
       "name": "iPhone 15",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15",
       "official_release_date": "2023-09-22",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143531+00:00",
       "family": "iPhone 15"
     },
     {
       "name": "iPhone 15 Plus",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Plus",
       "official_release_date": "2023-09-22",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143544+00:00",
       "family": "iPhone 15"
     },
     {
       "name": "iPhone 14 Pro",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro",
       "official_release_date": "2022-09-16",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143556+00:00",
       "family": "iPhone 14"
     },
     {
       "name": "iPhone 14 Pro Max",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro-Max",
       "official_release_date": "2022-09-16",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143569+00:00",
       "family": "iPhone 14"
     },
     {
       "name": "iPhone 14",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14",
       "official_release_date": "2022-09-16",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143581+00:00",
       "family": "iPhone 14"
     },
     {
       "name": "iPhone 14 Plus",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Plus",
       "official_release_date": "2022-10-07",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143593+00:00",
       "family": "iPhone 14"
     },
     {
       "name": "iPhone SE (3rd generation)",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
       "official_release_date": "2022-03-18",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143606+00:00",
       "family": "iPhone"
     },
     {
       "name": "iPhone 13 Pro",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro",
       "official_release_date": "2021-09-24",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143618+00:00",
       "family": "iPhone 13"
     },
     {
       "name": "iPhone 13 Pro Max",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro-Max",
       "official_release_date": "2021-09-24",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143668+00:00",
       "family": "iPhone 13"
     },
     {
       "name": "iPhone 13",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13",
       "official_release_date": "2021-09-24",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143682+00:00",
       "family": "iPhone 13"
     },
     {
       "name": "iPhone 13 mini",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-13-mini",
       "official_release_date": "2021-09-24",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143694+00:00",
       "family": "iPhone 13"
     },
     {
       "name": "iPhone 12 Pro",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro",
       "official_release_date": "2020-10-23",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143707+00:00",
       "family": "iPhone 12"
     },
     {
       "name": "iPhone 12 Pro Max",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro-Max",
       "official_release_date": "2020-11-13",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143719+00:00",
       "family": "iPhone 12"
     },
     {
       "name": "iPhone 12",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12",
       "official_release_date": "2020-10-23",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143731+00:00",
       "family": "iPhone 12"
     },
     {
       "name": "iPhone 12 mini",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-12-mini",
       "official_release_date": "2020-11-13",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143743+00:00",
       "family": "iPhone 12"
     },
     {
       "name": "iPhone SE (2nd generation)",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE--2nd-generation-",
       "official_release_date": "2020-04-24",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143756+00:00",
       "family": "iPhone"
     },
     {
       "name": "iPhone 11 Pro",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro",
       "official_release_date": "2019-09-20",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143779+00:00",
       "family": "iPhone 11"
     },
     {
       "name": "iPhone 11 Pro Max",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro-Max",
       "official_release_date": "2019-09-20",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143792+00:00",
       "family": "iPhone 11"
     },
     {
       "name": "iPhone 11",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-11",
       "official_release_date": "2019-09-20",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143804+00:00",
       "family": "iPhone 11"
     },
     {
       "name": "iPhone Xʀ",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-XR",
       "official_release_date": "2018-10-26",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143820+00:00",
       "family": "iPhone X"
     },
     {
       "name": "iPhone Xs",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-XS",
       "official_release_date": "2018-09-21",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143832+00:00",
       "family": "iPhone X"
     },
     {
       "name": "iPhone Xs Max",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-XS-Max",
       "official_release_date": "2018-09-21",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143844+00:00",
       "family": "iPhone X"
     },
     {
       "name": "iPhone X",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-X",
       "official_release_date": "2017-11-03",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143858+00:00",
       "family": "iPhone X"
     },
     {
       "name": "iPhone 8",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-8",
       "official_release_date": "2017-09-22",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143870+00:00",
       "family": "iPhone 8"
     },
     {
       "name": "iPhone 8 Plus",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-8-Plus",
       "official_release_date": "2017-09-22",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143882+00:00",
       "family": "iPhone 8"
     },
     {
       "name": "iPhone 7",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-7",
       "official_release_date": "2016-09-16",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143894+00:00",
       "family": "iPhone 7"
     },
     {
       "name": "iPhone 7 Plus",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-7-Plus",
       "official_release_date": "2016-09-16",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143906+00:00",
       "family": "iPhone 7"
     },
     {
       "name": "iPhone SE (1st generation)",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-SE",
       "official_release_date": "2016-03-31",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143918+00:00",
       "family": "iPhone"
     },
     {
       "name": "iPhone 6s",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-6s",
       "official_release_date": "2015-09-25",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143965+00:00",
       "family": "iPhone 6s"
     },
     {
       "name": "iPhone 6s Plus",
       "identifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus",
       "official_release_date": "2015-09-25",
+      "runner_install_date": "not publicly recorded",
+      "runner_observed_at": "2026-09-25T04:52:04.143986+00:00",
       "family": "iPhone 6s"
     }
   ],
@@ -470,6 +721,7 @@
     {
       "version": "iOS 27",
       "official_release_date": "2026-09-14",
+      "runner_install_date": "not publicly recorded",
       "reason": "Not present in the selected GitHub Actions macOS-15 image; this is not evidence that Apple has not released it."
     }
   ],
@@ -478,12 +730,12 @@
     {
       "name": "Boot and bootstatus",
       "status": "passed",
-      "details": "E522B5C1-32B4-4B42-9AEF-3D7038E49B2A"
+      "details": "19042768-63BD-4162-8F04-99AB1C072814"
     },
     {
       "name": "System environment",
       "status": "failed",
-      "details": "/Users/runner/Library/Developer/CoreSimulator/Devices/E522B5C1-32B4-4B42-9AEF-3D7038E49B2A/data"
+      "details": "/Users/runner/Library/Developer/CoreSimulator/Devices/19042768-63BD-4162-8F04-99AB1C072814/data"
     },
     {
       "name": "Screenshot capture",
